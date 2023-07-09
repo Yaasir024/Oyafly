@@ -5,6 +5,7 @@ const flights = [
     {
         id: "1",
         airline: "Areo Airlines",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fareo-airlines.png?alt=media&token=f539e4a3-297d-4233-8fdb-bb87a7e51b0d",
         from: {
             code: "LOS",
             full: "Lagos"
@@ -23,12 +24,13 @@ const flights = [
         addInfo: {
             type: "info",
             message: "Discount valid until 21 May",
-            color: "yellow"
+            color: "#FFE224"
         }
     },
     {
         id: "2",
         airline: "Dana Air",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fdana-air.png?alt=media&token=94b7fd70-1a9b-41e1-baf4-af7894ab2d84",
         from: {
             code: "ABV",
             full: "Abuja"
@@ -47,57 +49,109 @@ const flights = [
         addInfo: {
             type: "non-stop",
             message: "Non-stop route",
-            color: "green"
+            color: "#00EA8A"
         }
     },
-    // {
-    //     id: "",
-    //     airline: "",
-    //     from: {
-    //         code: "",
-    //         full: ""
-    //     },
-    //     to: {
-    //         code: "",
-    //         full: ""
-    //     },
-    //     date: "",
-    //     time: "",
-    //     class: "",
-    //     price: {
-    //         full: "",
-    //         sale: ""
-    //     },
-    //     addInfo: {
-    //         type: "",
-    //         message: "",
-    //         color: ""
-    //     }
-    // },
-    // {
-    //     id: "",
-    //     airline: "",
-    //     from: {
-    //         code: "",
-    //         full: ""
-    //     },
-    //     to: {
-    //         code: "",
-    //         full: ""
-    //     },
-    //     date: "",
-    //     time: "",
-    //     class: "",
-    //     price: {
-    //         full: "",
-    //         sale: ""
-    //     },
-    //     addInfo: {
-    //         type: "",
-    //         message: "",
-    //         color: ""
-    //     }
-    // },
+    {
+        id: "3",
+        airline: "Air Peace",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fair-peace.png?alt=media&token=378c6d75-683c-4fa9-ba17-ee7d0805f8a8",
+        from: {
+            code: "ABB",
+            full: "Asaba"
+        },
+        to: {
+            code: "KAN",
+            full: "Kano"
+        },
+        date: "21 Jul ‘23",
+        time: "1hr 10m",
+        class: "Economy+",
+        price: {
+            full: "₦150,000",
+            sale: "₦536,000"
+        },
+        addInfo: {
+            type: "info",
+            message: "Free extra 5kg luggage",
+            color: "#E0E0E0"
+        }
+    },
+    {
+        id: "1",
+        airline: "Areo Airlines",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fareo-airlines.png?alt=media&token=f539e4a3-297d-4233-8fdb-bb87a7e51b0d",
+        from: {
+            code: "LOS",
+            full: "Lagos"
+        },
+        to: {
+            code: "ABV",
+            full: "Abuja"
+        },
+        date: "21 Jul ‘23",
+        time: "1hr 10m",
+        class: "Economy+",
+        price: {
+            full: "₦198,000",
+            sale: "₦536,000"
+        },
+        addInfo: {
+            type: "info",
+            message: "Discount valid until 21 May",
+            color: "#FFE224"
+        }
+    },
+    {
+        id: "2",
+        airline: "Dana Air",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fdana-air.png?alt=media&token=94b7fd70-1a9b-41e1-baf4-af7894ab2d84",
+        from: {
+            code: "ABV",
+            full: "Abuja"
+        },
+        to: {
+            code: "PHC",
+            full: "Portharcourt"
+        },
+        date: "21 Jul ‘23",
+        time: "1hr 10m",
+        class: "Economy+",
+        price: {
+            full: "₦126,000",
+            sale: "₦536,000"
+        },
+        addInfo: {
+            type: "non-stop",
+            message: "Non-stop route",
+            color: "#00EA8A"
+        }
+    },
+    {
+        id: "3",
+        airline: "Air Peace",
+        img: "https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fair-peace.png?alt=media&token=378c6d75-683c-4fa9-ba17-ee7d0805f8a8",
+        from: {
+            code: "ABB",
+            full: "Asaba"
+        },
+        to: {
+            code: "KAN",
+            full: "Kano"
+        },
+        date: "21 Jul ‘23",
+        time: "1hr 10m",
+        class: "Economy+",
+        price: {
+            full: "₦150,000",
+            sale: "₦536,000"
+        },
+        addInfo: {
+            type: "info",
+            message: "Free extra 5kg luggage",
+            color: "#E0E0E0"
+        }
+    },
 ]
 </script>
 
@@ -112,7 +166,7 @@ const flights = [
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
-        <div class="carousel mt-[70px] pl-[24px] flex">
+        <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
             <div class="" v-for="flight in flights" :key="flight.id">
                 <div class="w-[320px] border border-[#D7E6FE] p-4 rounded-lg">
                     <div class="flex items-center justify-between pb-[8px] border-b border-of-gray">
@@ -120,6 +174,7 @@ const flights = [
                             {{ flight.airline }}
 
                         </h3>
+                        <img :src="flight.img" alt="" class="h-[27px] w-[27px] border rounded-[3px] overflow-hidden">
                     </div>
                     <div class="mt-[32px]">
                         <div class="flex items-center justify-between">
@@ -170,6 +225,31 @@ const flights = [
                             <span class="text-[14px] leading-[17px]">{{ flight.class }}</span>
                         </div>
                     </div>
+                    <div class="mt-[95px]">
+                        <div class="flex items-center px-3 py-2 rounded-[20px] mb-[12px]"
+                            :style="{ backgroundColor: flight.addInfo.color }">
+                            <svg v-if="flight.addInfo.type == 'info'" width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.00004 0.832031C10.6827 0.832031 13.668 3.81736 13.668 7.50003C13.668 11.182 10.6827 14.1667 7.00004 14.1667C3.31737 14.1674 0.333374 11.182 0.333374 7.50003C0.332707 3.81736 3.31737 0.832031 7.00004 0.832031ZM6.99737 6.33203C6.834 6.33225 6.67639 6.39246 6.55447 6.50123C6.43256 6.60999 6.35483 6.75974 6.33604 6.92203L6.33137 6.99936L6.33404 10.6674L6.33804 10.7447C6.35667 10.9073 6.43447 11.0574 6.55661 11.1663C6.67875 11.2753 6.8367 11.3355 7.00037 11.3355C7.16404 11.3355 7.322 11.2753 7.44414 11.1663C7.56628 11.0574 7.64408 10.9073 7.66271 10.7447L7.66671 10.6667L7.66404 6.9987L7.65937 6.9207C7.6401 6.75854 7.56199 6.60909 7.43984 6.5007C7.31769 6.39232 7.16001 6.33254 6.99671 6.3327L6.99737 6.33203ZM7.00071 3.8327C6.77943 3.8327 6.56721 3.9206 6.41074 4.07707C6.25428 4.23354 6.16637 4.44575 6.16637 4.66703C6.16637 4.88831 6.25428 5.10053 6.41074 5.25699C6.56721 5.41346 6.77943 5.50136 7.00071 5.50136C7.11023 5.50132 7.21867 5.47971 7.31984 5.43775C7.42101 5.3958 7.51292 5.33433 7.59034 5.25686C7.66775 5.17938 7.72915 5.08742 7.77102 4.98621C7.81289 4.88501 7.83442 4.77655 7.83437 4.66703C7.83433 4.55751 7.81272 4.44907 7.77076 4.3479C7.72881 4.24673 7.66734 4.15481 7.58987 4.0774C7.51239 3.99999 7.42043 3.93859 7.31922 3.89672C7.21802 3.85485 7.10956 3.83332 7.00004 3.83336L7.00071 3.8327Z"
+                                    fill="#10182C" />
+                            </svg>
+                            <svg v-if="flight.addInfo.type == 'non-stop'" width="13" height="12" viewBox="0 0 13 12"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.01533 0.440081L6.262 1.45008C6.13533 1.58675 6.024 1.71541 5.93 1.82808C5.84733 1.92808 5.77133 1.96008 5.734 1.96808L3.42533 2.44941L3.17067 1.99475C2.712 1.17608 3.304 0.166748 4.242 0.166748C4.52333 0.166748 4.79667 0.263415 5.01533 0.440081ZM9.12867 0.502081C10.62 0.386748 11.7347 1.33075 12.3647 2.05275C12.6907 2.42608 12.756 2.89808 12.6167 3.30808C12.5444 3.51323 12.4263 3.69916 12.2712 3.85168C12.1162 4.00419 11.9283 4.11926 11.722 4.18808L8.14133 5.42275L5.984 8.29941C5.78889 8.55955 5.50559 8.7396 5.18723 8.8058C4.86886 8.872 4.53727 8.81982 4.25463 8.65903C3.97198 8.49825 3.75768 8.23989 3.6519 7.9324C3.54611 7.62491 3.5561 7.2894 3.68 6.98875L4.01867 6.16675L1.818 6.59008C1.59674 6.63261 1.36881 6.62572 1.15052 6.56991C0.932226 6.5141 0.728962 6.41075 0.555263 6.26724C0.381563 6.12373 0.241718 5.94362 0.145729 5.73977C0.0497394 5.53593 -2.28939e-05 5.31339 2.56266e-07 5.08808V2.62808C-0.000168673 2.37745 0.0831852 2.13392 0.23689 1.93595C0.390594 1.73799 0.605884 1.59689 0.848739 1.53495C1.09159 1.47302 1.34816 1.49377 1.5779 1.59394C1.80764 1.69411 1.99745 1.86799 2.11733 2.08808L2.76133 3.26808L5.87 2.62141C6.07933 2.57741 6.28133 2.44808 6.44333 2.25408C6.69 1.95608 7.06267 1.55075 7.50867 1.20675C7.94867 0.868081 8.50867 0.549415 9.12867 0.502081ZM0.5 10.5001C0.367392 10.5001 0.240215 10.5528 0.146447 10.6465C0.0526786 10.7403 2.56266e-07 10.8675 2.56266e-07 11.0001C2.56266e-07 11.1327 0.0526786 11.2599 0.146447 11.3536C0.240215 11.4474 0.367392 11.5001 0.5 11.5001H11.5C11.6326 11.5001 11.7598 11.4474 11.8536 11.3536C11.9473 11.2599 12 11.1327 12 11.0001C12 10.8675 11.9473 10.7403 11.8536 10.6465C11.7598 10.5528 11.6326 10.5001 11.5 10.5001H0.5Z"
+                                    fill="#10182C" />
+                            </svg>
+                            <span class="ml-[5px] text-[14px] leading-[16px] font-semibold">
+                                {{ flight.addInfo.message }}
+                            </span>
+                        </div>
+                        <div class="border-t border-of-gray pt-[16px] flex items-end">
+                            <span class="text-[20px] leading-[21px] font-pp mr-2">{{ flight.price.full }}</span>
+                            <span class="text-[16px] leading-[16px] line-through font-pp font-semibold">{{ flight.price.sale
+                            }}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,4 +269,15 @@ const flights = [
                 </div>
             </div>
         </div>
-</section></template>
+    </section>
+</template>
+
+<style scoped>
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel {
+  box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
+}
+
+</style>

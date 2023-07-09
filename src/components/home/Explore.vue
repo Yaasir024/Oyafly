@@ -8,12 +8,44 @@
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
-        <div class="carousel mt-[70px]"></div>
+        <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
+            </div>
+            <div class="shrink-0 w-[240px]">
+                <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
+            </div>
+        </div>
         <div class="mt-[24px] px-[24px] pb-[24px] ">
             <div class="border-t border-[#D7E6FE] pt-[30px] flex items-center justify-end">
                 <div class="flex items-center">
                     <h4 class="text-[20px] leading-[21px] font-semibold font-pp">more trending destinations</h4>
-                    <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.91 14.91C7.91 14.91 7.92 14.97 7.93 15L13.96 37.5H52L45.97 15C43.75 6.72 35.23 0 26.95 0H18.91C10.66 0 5.75 6.67 7.91 14.91Z"
                             fill="#00EA8A" />
@@ -22,6 +54,17 @@
                             fill="#10182C" />
                     </svg>
                 </div>
+            </div>
         </div>
-    </div>
-</section></template>
+    </section>
+</template>
+
+<style scoped>
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
+}
+</style>
