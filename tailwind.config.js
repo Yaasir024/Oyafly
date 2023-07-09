@@ -35,6 +35,7 @@ module.exports = {
         'of-main': '#D7E6FE',
         'of-blue': '#1549FF',
         'of-dark': '#10182C',
+        'of-gray': '#D7E6FE',
       },
       flex: {
         '25%': '0 0 25%',
