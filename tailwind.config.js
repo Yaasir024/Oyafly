@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'inter': ['Inter'],
-      'pp': ['Inter'],
+      'pp': ['PPMori'],
     },
     screens: {
       xs: '600px',

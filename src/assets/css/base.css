@@ -40,6 +40,43 @@
   font-weight: 900;
   font-style: normal;
 }
+/* PPMOri */
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-Extralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-ExtralightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./fonts/pp/PPMori-SemiBoldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
 
 *,
 *::before,
