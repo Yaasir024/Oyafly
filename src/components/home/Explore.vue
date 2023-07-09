@@ -1,10 +1,10 @@
 <template>
     <section class="mt-2 bg-white rounded-[20px] pt-[40px]">
         <div class="px-[24px]">
-            <h1 class="text-[48px] leading-[46px] font-pp font-semibold">
+            <h1 class="text-[36px] sm:text-[48px] leading-[32px] sm:leading-[46px] font-pp font-semibold">
                 Explore Nigeria
             </h1>
-            <p class="text-[24px] leading-[36px] max-w-[530px] mt-[12px]">
+            <p class="text-[18px] sm:text-[24px] leading-[24px] sm:leading-[36px] max-w-[530px] mt-[12px]">
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
@@ -43,8 +43,8 @@
         <div class="mt-[24px] px-[24px] pb-[24px] ">
             <div class="border-t border-[#D7E6FE] pt-[30px] flex items-center justify-end">
                 <div class="flex items-center">
-                    <h4 class="text-[20px] leading-[21px] font-semibold font-pp">more trending destinations</h4>
-                    <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
+                    <h4 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp">more trending destinations</h4>
+                    <svg class="ml-[10px] sm:ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M7.91 14.91C7.91 14.91 7.92 14.97 7.93 15L13.96 37.5H52L45.97 15C43.75 6.72 35.23 0 26.95 0H18.91C10.66 0 5.75 6.67 7.91 14.91Z"

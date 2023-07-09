@@ -1,15 +1,15 @@
 <template>
     <section class="mt-2 bg-of-blue rounded-[20px] pt-[40px] pb-[60px] px-[24px] text-white">
         <div class="">
-            <h1 class="text-[48px] leading-[46px] font-pp font-semibold">
+            <h1 class="text-[36px] sm:text-[48px] leading-[32px] sm:leading-[46px] font-pp font-semibold">
                 We’ve got you covered
             </h1>
-            <p class="text-[24px] leading-[36px] max-w-[530px] mt-[12px]">
+            <p class="text-[18px] sm:text-[24px] leading-[24px] sm:leading-[36px] max-w-[530px] mt-[12px]">
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
         <div class="mt-[96px] flex flex-wrap">
-            <div class="flex-33.33% flex mb-[70px]">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px]">
                 <div class="mr-[12px]">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -29,7 +29,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-33.33% flex mb-[70px]">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px]">
                 <div class="mr-[12px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -46,7 +46,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-33.33% flex mb-[70px]">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px]">
                 <div class="mr-[12px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -63,7 +63,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-33.33% flex ">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px] lg:mb-0">
                 <div class="mr-[12px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -80,7 +80,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-33.33% flex ">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px] lg:mb-0">
                 <div class="mr-[12px]">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -100,7 +100,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex-33.33% flex ">
+            <div class="flex-full sm:flex-50% lg:flex-33.33% flex mb-[70px] lg:mb-0">
                 <div class="mr-[12px]">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -118,4 +118,5 @@
                 </div>
             </div>
         </div>
-</section></template>
+    </section>
+</template>

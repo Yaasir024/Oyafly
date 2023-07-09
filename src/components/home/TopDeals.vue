@@ -159,16 +159,16 @@ const flights = [
 <template>
     <section class="mt-2 bg-white rounded-[20px] pt-[40px]">
         <div class="px-[24px]">
-            <h1 class="text-[48px] leading-[42px] font-pp font-semibold">
+            <h1 class="text-[36px] sm:text-[48px] leading-[30px] sm:leading-[42px] font-pp font-semibold">
                 Top flight deals
             </h1>
-            <p class="text-[24px] leading-[36px] max-w-[530px] mt-[12px]">
+            <p class="text-[18px] sm:text-[24px] leading-[24px] sm:leading-[36px] max-w-[530px] mt-[12px]">
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
         <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
             <div class="" v-for="flight in flights" :key="flight.id">
-                <div class="w-[320px] border border-[#D7E6FE] p-4 rounded-lg">
+                <div class="w-[300px] xs:w-[320px] border border-[#D7E6FE] p-4 rounded-lg">
                     <div class="flex items-center justify-between pb-[8px] border-b border-of-gray">
                         <h3 class="text-[18px] leading-[19px] font-pp">
                             {{ flight.airline }}
@@ -256,7 +256,7 @@ const flights = [
         <div class="mt-[24px] px-[24px] pb-[24px] ">
             <div class="border-t border-[#D7E6FE] pt-[30px] flex items-center justify-end">
                 <div class="flex items-center">
-                    <h4 class="text-[20px] leading-[21px] font-semibold font-pp">discover more flights</h4>
+                    <h4 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp">discover more flights</h4>
                     <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path

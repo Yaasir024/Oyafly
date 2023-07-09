@@ -9,7 +9,7 @@ import Footer from '@/components/navigation/Footer.vue';
 
 <template>
   <main class="bg-of-main  min-h-screen">
-    <div class="px-6">
+    <div class="px-4 sm:px-6">
       <Header />
       <Hero />
       <TopDeals />
@@ -17,7 +17,7 @@ import Footer from '@/components/navigation/Footer.vue';
       <Perks />
       <section class="mt-2 bg-white rounded-[20px] py-[30px] flex items-center justify-center">
         <div class="flex items-center">
-          <h3 class="text-[20px] leading-[21px] font-semibold font-pp">
+          <h3 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp">
             Manage your booking
           </h3>
           <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none" xmlns="http://www.w3.org/2000/svg">
