@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import axios from 'axios';
 import { useClickOutside } from "@/composables/useClickOutside";
 let flightClasses = ["first class", "business", "economy"]
@@ -22,31 +22,86 @@ const selectClass = (c) => {
     showFlightClassMenu.value = false
 }
 const reduceAdult = () => {
-    if(flightData.value.adult!= 0) {
+    if (flightData.value.adult != 0) {
         flightData.value.adult -= 1
     }
 }
 const reduceInfant = () => {
-    if(flightData.value.infants!= 0) {
+    if (flightData.value.infants != 0) {
         flightData.value.infants -= 1
     }
 }
 
-const apiFetch = () => {
-    axios.get('https://airlabs.co/api/v9/airports?iata_code=CDG&api_key=dea70b01-d745-49a5-ae34-47f7562739e8')
-  .then(response => {
-    // Handle successful response
-    console.log(response.data);
-  })
-  .catch(error => {
-    // Handle error
-    console.error(error);
-  });
+const airports = [
+    {
+        code: "LOS",
+        city: "Lagos",
+        fullName: "Murtala Muhammed Airport",
+    },
+    {
+        code: "ABV",
+        city: "Abuja",
+        fullName: "Abuja Nnamdi Azikiwe International Airport",
+    },
+    {
+        code: "KAN",
+        city: "Kano",
+        fullName: "Mallam Aminu Kano International Airport",
+    },
+]
+
+const toMenu = ref(null)
+const showToMenu = ref(false)
+
+useClickOutside(toMenu, () => {
+    showToMenu.value = false;
+});
+const fromMenu = ref(null)
+const showFromMenu = ref(false)
+
+useClickOutside(fromMenu, () => {
+    showFromMenu.value = false;
+});
+
+const selectAirport = (c) => {
+    console.log(c)
+    showFromMenu.value = false
+    showToMenu.value = false
+}
+const toQuery = ref("")
+const fromQuery = ref("")
+const filteredToData = computed(() => {
+    const query = ref(toQuery.value.toLowerCase());
+    if (toQuery.value === "") {
+        return airports;
+    }
+    return airports.filter((item) => {
+        return Object.values(item).some((word) =>
+            String(word).toLowerCase().includes(query.value)
+        );
+    });
+});
+const filteredFromData = computed(() => {
+    const query = ref(fromQuery.value.toLowerCase());
+    if (fromQuery.value === "") {
+        return airports;
+    }
+    return airports.filter((item) => {
+        return Object.values(item).some((word) =>
+            String(word).toLowerCase().includes(query.value)
+        );
+    });
+});
+
+const switchAirports = () => {
+    // let newFrom = 
 }
 
-onMounted(() => {
-    apiFetch()
-})
+const datePicker = ref(null)
+const openDateTime = () => {
+    datePicker.value.dispatchEvent(new Event('click'))
+    console.log('click', datePicker.value)
+}
 </script>
 
 <template>
@@ -142,8 +197,8 @@ onMounted(() => {
             <div
                 class="flex flex-full xl:flex-75% flex-col md:flex-row md:items-center border-2 border-[#D7E6FE] bg-[#F3F7FF] rounded-[14px]">
                 <div
-                    class="px-[12px] xl:px-[19px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE] relative">
-                    <div class="flex items-center">
+                    class="px-[12px] xl:px-[19px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE] relative" ref="fromMenu">
+                    <div class="flex items-center" @click="showFromMenu = !showFromMenu">
                         <svg class="mr-[12px]" width="20" height="17" viewBox="0 0 20 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -151,9 +206,31 @@ onMounted(() => {
                                 fill="#10182C" />
                         </svg>
                         <input type="text" placeholder="From?"
+                        v-model="fromQuery"
                             class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent">
                     </div>
+                    <transition name="menu">
+                        <div class="absolute top-[60px] left-0 z-[5] w-full shadow-md" v-if="showFromMenu">
+                            <ul class="bg-white border rounded-b-md">
+                                <li class="px-2 py-2 cursor-pointer hover:bg-of-blue hover:text-white capitalize text-base font-medium border-b"
+                                    v-for="airport in filteredFromData" :key="airport" @click="selectAirport(airport)">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-base font-medium">
+                                            {{ airport.city }}
+                                        </span>
+                                        <span class="text-base font-medium">
+                                            {{ airport.code }}
+                                        </span>
+                                    </div>
+                                    <p class="text-[13px] mt-2">
+                                        {{ airport.fullName }}
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </transition>
                     <button
+                    @click="switchAirports"
                         class="absolute bottom-[-35%] md:bottom-[10px] right-[50%] md:right-[-25px] h-[48px] w-[48px] rounded-full bg-white flex items-center justify-center border border-of-gray rotate-90 md:rotate-0">
                         <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -162,18 +239,39 @@ onMounted(() => {
                         </svg>
                     </button>
                 </div>
-                <div
-                    class="px-[12px] md:pr-[19px] md:pl-[38px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE]">
-                    <div class="flex items-center">
+                <!-- TO -->
+                <div class="px-[12px] md:pr-[19px] md:pl-[38px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE] relative"
+                    ref="toMenu">
+                    <div class="flex items-center" @click="showToMenu = !showToMenu">
                         <svg class="mr-[12px]" width="19" height="18" viewBox="0 0 19 18" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M7.33342 2.03901V2.81701L10.3604 4.01901H12.4794L11.2294 1.21101C10.3354 -0.797993 7.33342 -0.158993 7.33342 2.03901ZM10.0534 4.97401L5.83342 3.29701V1.75701C5.83342 0.0190067 3.57442 -0.656993 2.62042 0.796007L0.710418 3.70401C0.524742 3.98705 0.403714 4.30752 0.355944 4.64264C0.308173 4.97776 0.334833 5.31929 0.434028 5.64294C0.533222 5.96659 0.702514 6.2644 0.929863 6.5152C1.15721 6.766 1.43703 6.96362 1.74942 7.09401L5.25242 8.55801L3.20742 10.456C1.58042 11.967 3.20342 14.621 5.28942 13.861L12.0504 11.397L15.5134 12.843C15.8228 12.9721 16.1592 13.0228 16.4928 12.9906C16.8264 12.9584 17.147 12.8444 17.426 12.6586C17.7049 12.4728 17.9337 12.221 18.092 11.9256C18.2503 11.6301 18.3333 11.3002 18.3334 10.965V9.73501C18.3335 9.11574 18.2117 8.50251 17.9748 7.93035C17.7379 7.35818 17.3906 6.83829 16.9528 6.40035C16.5149 5.96242 15.9951 5.61502 15.423 5.37801C14.8509 5.141 14.2377 5.01901 13.6184 5.01901H10.2924C10.211 5.0192 10.1292 5.00392 10.0534 4.97401ZM0.333418 17.25C0.333418 17.0511 0.412436 16.8603 0.553088 16.7197C0.69374 16.579 0.884506 16.5 1.08342 16.5H17.5834C17.7823 16.5 17.9731 16.579 18.1137 16.7197C18.2544 16.8603 18.3334 17.0511 18.3334 17.25C18.3334 17.4489 18.2544 17.6397 18.1137 17.7803C17.9731 17.921 17.7823 18 17.5834 18H1.08342C0.884506 18 0.69374 17.921 0.553088 17.7803C0.412436 17.6397 0.333418 17.4489 0.333418 17.25Z"
                                 fill="#10182C" />
                         </svg>
-                        <input type="text" placeholder="To?"
+                        <input type="text" placeholder="To?" v-model="toQuery"
                             class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent">
                     </div>
+                    <transition name="menu">
+                        <div class="absolute top-[60px] left-0 z-[5] w-full shadow-md" v-if="showToMenu">
+                            <ul class="bg-white border rounded-b-md">
+                                <li class="px-2 py-2 cursor-pointer hover:bg-of-blue hover:text-white capitalize text-base font-medium border-b"
+                                    v-for="airport in filteredToData" :key="airport" @click="selectAirport(airport)">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-base font-medium">
+                                            {{ airport.city }}
+                                        </span>
+                                        <span class="text-base font-medium">
+                                            {{ airport.code }}
+                                        </span>
+                                    </div>
+                                    <p class="text-[13px] mt-2">
+                                        {{ airport.fullName }}
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </transition>
                 </div>
                 <div class="px-[12px] xl:px-[19px] py-[24px] xl:py-[30px] flex-1">
                     <div class="flex items-center">
@@ -183,8 +281,12 @@ onMounted(() => {
                                 d="M18.6667 5.5V14.75C18.6667 15.612 18.3243 16.4386 17.7148 17.0481C17.1054 17.6576 16.2787 18 15.4167 18H3.91675C3.05479 18 2.22814 17.6576 1.61865 17.0481C1.00916 16.4386 0.666748 15.612 0.666748 14.75V5.5H18.6667ZM4.91675 12C4.58523 12 4.26729 12.1317 4.03286 12.3661C3.79844 12.6005 3.66675 12.9185 3.66675 13.25C3.66675 13.5815 3.79844 13.8995 4.03286 14.1339C4.26729 14.3683 4.58523 14.5 4.91675 14.5C5.24827 14.5 5.56621 14.3683 5.80063 14.1339C6.03505 13.8995 6.16675 13.5815 6.16675 13.25C6.16675 12.9185 6.03505 12.6005 5.80063 12.3661C5.56621 12.1317 5.24827 12 4.91675 12ZM9.66675 12C9.33523 12 9.01729 12.1317 8.78286 12.3661C8.54844 12.6005 8.41675 12.9185 8.41675 13.25C8.41675 13.5815 8.54844 13.8995 8.78286 14.1339C9.01729 14.3683 9.33523 14.5 9.66675 14.5C9.99827 14.5 10.3162 14.3683 10.5506 14.1339C10.7851 13.8995 10.9167 13.5815 10.9167 13.25C10.9167 12.9185 10.7851 12.6005 10.5506 12.3661C10.3162 12.1317 9.99827 12 9.66675 12ZM4.91675 7.5C4.58523 7.5 4.26729 7.6317 4.03286 7.86612C3.79844 8.10054 3.66675 8.41848 3.66675 8.75C3.66675 9.08152 3.79844 9.39946 4.03286 9.63388C4.26729 9.8683 4.58523 10 4.91675 10C5.24827 10 5.56621 9.8683 5.80063 9.63388C6.03505 9.39946 6.16675 9.08152 6.16675 8.75C6.16675 8.41848 6.03505 8.10054 5.80063 7.86612C5.56621 7.6317 5.24827 7.5 4.91675 7.5ZM9.66675 7.5C9.33523 7.5 9.01729 7.6317 8.78286 7.86612C8.54844 8.10054 8.41675 8.41848 8.41675 8.75C8.41675 9.08152 8.54844 9.39946 8.78286 9.63388C9.01729 9.8683 9.33523 10 9.66675 10C9.99827 10 10.3162 9.8683 10.5506 9.63388C10.7851 9.39946 10.9167 9.08152 10.9167 8.75C10.9167 8.41848 10.7851 8.10054 10.5506 7.86612C10.3162 7.6317 9.99827 7.5 9.66675 7.5ZM14.4167 7.5C14.0852 7.5 13.7673 7.6317 13.5329 7.86612C13.2984 8.10054 13.1667 8.41848 13.1667 8.75C13.1667 9.08152 13.2984 9.39946 13.5329 9.63388C13.7673 9.8683 14.0852 10 14.4167 10C14.7483 10 15.0662 9.8683 15.3006 9.63388C15.5351 9.39946 15.6667 9.08152 15.6667 8.75C15.6667 8.41848 15.5351 8.10054 15.3006 7.86612C15.0662 7.6317 14.7483 7.5 14.4167 7.5ZM15.4167 0C16.2787 0 17.1054 0.34241 17.7148 0.951903C18.3243 1.5614 18.6667 2.38805 18.6667 3.25V4H0.666748V3.25C0.666748 2.38805 1.00916 1.5614 1.61865 0.951903C2.22814 0.34241 3.05479 0 3.91675 0H15.4167Z"
                                 fill="#10182C" />
                         </svg>
+                        <!-- <div class="text-of-dark text-base xl:text-lg leading-[22px] w-full" @click="openDateTime">
+                            Going ⎯ Return Date
+                        </div> -->
+                        <!--  opacity-0 -->
                         <input type="date" placeholder="Going ⎯ Return Date"
-                            class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent">
+                            class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent" ref="datePicker">
                     </div>
                 </div>
             </div>
@@ -228,4 +330,5 @@ onMounted(() => {
 .menu-enter-from,
 .menu-leave-to {
     transform: scale(0);
-}</style>
+}
+</style>
