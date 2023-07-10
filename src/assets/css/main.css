@@ -1,2 +1,13 @@
 @import './base.css';
 
+/* Menu Animation */
+.menu-enter-active,
+.menu-leave-active {
+    transition: transform 0.3s ease;
+    transform-origin: top left;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+    transform: scale(0);
+}

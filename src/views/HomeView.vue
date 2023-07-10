@@ -12,6 +12,26 @@ import Footer from '@/components/navigation/Footer.vue';
     <div class="px-4 sm:px-6">
       <Header />
       <Hero />
+      <div class="bg-white rounded-[20px] p-[6px] flex items-center mt-[8px] flex-wrap">
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/ibom.svg" alt="" class="">
+        </div>
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/air-peace.svg" alt="" class="">
+        </div>
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/dana.svg" alt="" class="">
+        </div>
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/max.svg" alt="" class="">
+        </div>
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/aero.svg" alt="" class="">
+        </div>
+        <div class="flex items-center justify-center py-2 lg:py-0 flex-33.33% lg:flex-1">
+          <img src="@/assets/flights-logo/united.svg" alt="" class="">
+        </div>
+      </div>
       <TopDeals />
       <Explore />
       <Perks />
@@ -20,7 +40,8 @@ import Footer from '@/components/navigation/Footer.vue';
           <h3 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp">
             Manage your booking
           </h3>
-          <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.91 14.91C7.91 14.91 7.92 14.97 7.93 15L13.96 37.5H52L45.97 15C43.75 6.72 35.23 0 26.95 0H18.91C10.66 0 5.75 6.67 7.91 14.91Z"
               fill="#00EA8A" />
