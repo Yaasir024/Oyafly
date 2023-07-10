@@ -14,7 +14,7 @@ useClickOutside(mobileNav, () => {
 </script>
 
 <template>
-    <header class="sticky top-0 bg-of-main pb-1">
+    <header class="sticky top-0 bg-of-main pb-1 z-20">
         <section class="flex items-center justify-end py-[6px] pr-[24px]">
             <div class="text-[13px] hidden xs:block">Call support: +234-803-000-0031</div>
             <div class="text-[13px] font-semibold ml-4">Manage bookings</div>
@@ -61,7 +61,7 @@ useClickOutside(mobileNav, () => {
                 </div>
             </div>
         </nav>
-        <div class="overlay h-screen fixed top-0 left-0 bottom-0 right-0 bg-black/40 z-10" v-if="showMobileNav">
+        <div class="overlay h-screen fixed top-0 left-0 bottom-0 right-0 bg-black/40 z-30" v-if="showMobileNav">
         </div>
     </header>
 </template>

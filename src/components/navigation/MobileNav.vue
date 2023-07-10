@@ -7,7 +7,7 @@ const closeOnRoute = () => {
 </script>
 
 <template>
-    <div class="h-screen w-screen xs:w-[70vw] fixed top-0 bottom-0 right-0 bg-[#333] ml-auto text-white flex flex-col justify-between z-40">
+    <div class="h-screen w-screen xs:w-[70vw] fixed top-0 bottom-0 right-0 bg-[#333] ml-auto text-white flex flex-col justify-between z-50">
         <div class="">
             <div class="flex items-center justify-end px-3 py-4 border-b">
                 <button class="text-white" @click="$emit('close')">
