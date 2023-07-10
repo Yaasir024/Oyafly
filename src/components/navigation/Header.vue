@@ -1,3 +1,18 @@
+<script setup>
+import { ref } from 'vue';
+import MobileNav from '@/components/navigation/MobileNav.vue';
+
+import { useClickOutside } from "@/composables/useClickOutside";
+
+
+const mobileNav = ref(null)
+const showMobileNav = ref(false)
+
+useClickOutside(mobileNav, () => {
+    showMobileNav.value = false;
+});
+</script>
+
 <template>
     <header class="sticky top-0 bg-of-main pb-1">
         <section class="flex items-center justify-end py-[6px] pr-[24px]">
@@ -38,8 +53,28 @@
                             an account</button>
                     </RouterLink>
                 </div>
-                <svg class="block md:hidden" height="24" width="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+                <div class="block md:hidden" ref="mobileNav" >
+                    <svg @click="showMobileNav = !showMobileNav" class="cursor-pointer" height="24" width="24" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m22 16.75c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75zm0-5c0-.414-.336-.75-.75-.75h-18.5c-.414 0-.75.336-.75.75s.336.75.75.75h18.5c.414 0 .75-.336.75-.75z" fill-rule="nonzero"/></svg>
+                    <transition name="nav">
+                        <MobileNav v-if="showMobileNav" @close="showMobileNav = false"/>
+                    </transition>
+                </div>
             </div>
         </nav>
+        <div class="overlay h-screen fixed top-0 left-0 bottom-0 right-0 bg-black/40 z-10" v-if="showMobileNav">
+        </div>
     </header>
 </template>
+
+<style scoped>
+/* Nav Animation */
+.nav-enter-active,
+.nav-leave-active {
+  transition: all 0.4s ease;
+}
+.nav-enter-from,
+.nav-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+</style>

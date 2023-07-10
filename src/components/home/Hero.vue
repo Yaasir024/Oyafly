@@ -17,7 +17,7 @@
             </div>
             <div class="mt-[20px]">
                 <div class="flex sm:items-center flex-col sm:flex-row">
-                    <div class="flex items-center mb-4 sm:mb-0">
+                    <div class="flex items-center mb-4 sm:mb-0  flex-wrap gap-y-1">
                         <button
                             class="px-[12px] py-[10px] border border-of-dark rounded-[40px] text-[16px] leading-[19px] font-semibold mr-[16px]">One-way</button>
                         <button
@@ -52,9 +52,6 @@
                                     fill="#10182C" />
                             </svg>
                         </button>
-                    </div>
-                    <div class="flex items-center">
-
                     </div>
                 </div>
             </div>
