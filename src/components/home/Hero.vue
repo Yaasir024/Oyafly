@@ -1,7 +1,12 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+import { useRouter } from 'vue-router';
+
 import axios from 'axios';
 import { useClickOutside } from "@/composables/useClickOutside";
+
+const router = useRouter()
+
 let flightClasses = ["first class", "business", "economy"]
 
 const flightData = ref({
@@ -102,6 +107,10 @@ const openDateTime = () => {
     datePicker.value.dispatchEvent(new Event('click'))
     console.log('click', datePicker.value)
 }
+
+const search = () => {
+    router.push('/search')
+}
 </script>
 
 <template>
@@ -196,8 +205,8 @@ const openDateTime = () => {
         <div class="bg-white rounded-[20px] p-[6px] mt-2 flex flex-col xl:flex-row">
             <div
                 class="flex flex-full xl:flex-75% flex-col md:flex-row md:items-center border-2 border-[#D7E6FE] bg-[#F3F7FF] rounded-[14px]">
-                <div
-                    class="px-[12px] xl:px-[19px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE] relative" ref="fromMenu">
+                <div class="px-[12px] xl:px-[19px] py-[24px] xl:py-[30px] flex-1 border-b md:border-r border-[#D7E6FE] relative"
+                    ref="fromMenu">
                     <div class="flex items-center" @click="showFromMenu = !showFromMenu">
                         <svg class="mr-[12px]" width="20" height="17" viewBox="0 0 20 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -205,8 +214,7 @@ const openDateTime = () => {
                                 d="M7.523 0.41L9.393 1.925C9.203 2.13 9.036 2.323 8.895 2.492C8.771 2.642 8.657 2.69 8.601 2.702L5.138 3.424L4.756 2.742C4.068 1.514 4.956 0 6.363 0C6.785 0 7.195 0.145 7.523 0.41ZM13.693 0.503C15.93 0.33 17.602 1.746 18.547 2.829C19.036 3.389 19.134 4.097 18.925 4.712C18.8167 5.01973 18.6394 5.29862 18.4068 5.5274C18.1743 5.75617 17.8925 5.92876 17.583 6.032L12.212 7.884L8.976 12.199C8.68333 12.5892 8.25839 12.8593 7.78084 12.9586C7.30329 13.0579 6.80591 12.9796 6.38194 12.7384C5.95798 12.4972 5.63652 12.1097 5.47785 11.6485C5.31917 11.1872 5.33416 10.684 5.52 10.233L6.028 9L2.727 9.635C2.39511 9.69879 2.05322 9.68846 1.72578 9.60475C1.39834 9.52103 1.09344 9.366 0.832894 9.15074C0.572344 8.93548 0.362577 8.6653 0.218593 8.35954C0.0746091 8.05377 -3.43408e-05 7.71997 3.84399e-07 7.382V3.692C-0.00025301 3.31606 0.124778 2.95075 0.355335 2.65381C0.585891 2.35686 0.908827 2.14522 1.27311 2.05231C1.63739 1.9594 2.02224 1.99054 2.36685 2.14079C2.71146 2.29105 2.99618 2.55186 3.176 2.882L4.142 4.652L8.805 3.682C9.119 3.616 9.422 3.422 9.665 3.131C10.035 2.684 10.594 2.076 11.263 1.56C11.923 1.052 12.763 0.574 13.693 0.503ZM0.75 15.5C0.551088 15.5 0.360322 15.579 0.21967 15.7197C0.0790179 15.8603 3.84399e-07 16.0511 3.84399e-07 16.25C3.84399e-07 16.4489 0.0790179 16.6397 0.21967 16.7803C0.360322 16.921 0.551088 17 0.75 17H17.25C17.4489 17 17.6397 16.921 17.7803 16.7803C17.921 16.6397 18 16.4489 18 16.25C18 16.0511 17.921 15.8603 17.7803 15.7197C17.6397 15.579 17.4489 15.5 17.25 15.5H0.75Z"
                                 fill="#10182C" />
                         </svg>
-                        <input type="text" placeholder="From?"
-                        v-model="fromQuery"
+                        <input type="text" placeholder="From?" v-model="fromQuery"
                             class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent">
                     </div>
                     <transition name="menu">
@@ -229,8 +237,7 @@ const openDateTime = () => {
                             </ul>
                         </div>
                     </transition>
-                    <button
-                    @click="switchAirports"
+                    <button @click="switchAirports"
                         class="absolute bottom-[-35%] md:bottom-[10px] right-[50%] md:right-[-25px] h-[48px] w-[48px] rounded-full bg-white flex items-center justify-center border border-of-gray rotate-90 md:rotate-0">
                         <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -286,17 +293,18 @@ const openDateTime = () => {
                         </div> -->
                         <!--  opacity-0 -->
                         <input type="date" placeholder="Going ⎯ Return Date"
-                            class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent" ref="datePicker">
+                            class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent"
+                            ref="datePicker">
                     </div>
                 </div>
             </div>
             <div class="flex-full xl:flex-25% mt-2 xl:mt-0 xl:pl-[6px]">
-                <button
+                <button @click="search"
                     class="bg-of-blue rounded-[14px] py-[18px] md:py-[24px] px-[12px] w-full text-white text-[20px] leading-[36px] font-semibold">Search
                     Flights</button>
             </div>
         </div>
-        
+
     </section>
 </template>
 
