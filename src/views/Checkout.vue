@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from 'vue';
 
+import Perks from '@/components/home/Perks.vue';
+import Cta from '@/components/Cta.vue';
+import Footer from '@/components/navigation/Footer.vue';
+
 import { useClickOutside } from "@/composables/useClickOutside";
 
 
@@ -64,25 +68,167 @@ const selectCurrency = (c) => {
                     <img src="/logo.svg" alt="" class="">
                 </nav>
             </header>
-            <div class=""></div>
-            <section class="flex mt-[40px]">
+            <div class="mt-[10px] bg-white rounded-[12px] py-[16px] flex items-center justify-center">
+                <div class="flex items-center px-[12px] border-r-2 border-of-gray cursor-pointer">
+                    <button
+                        class="h-[24px] w-[24px] flex items-center justify-center bg-of-dark border border-of-dark rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
+                            <path
+                                d="M2.02006 5.64667C1.92528 5.55835 1.79991 5.51026 1.67038 5.51255C1.54084 5.51483 1.41725 5.56731 1.32565 5.65892C1.23404 5.75053 1.18156 5.87412 1.17928 6.00365C1.17699 6.13319 1.22507 6.25855 1.31339 6.35333L4.31339 9.35333C4.40714 9.44697 4.53423 9.49956 4.66673 9.49956C4.79923 9.49956 4.92631 9.44697 5.02006 9.35333L12.3534 2.02C12.4417 1.92522 12.4898 1.79985 12.4875 1.67032C12.4852 1.54078 12.4327 1.41719 12.3411 1.32558C12.2495 1.23398 12.1259 1.1815 11.9964 1.17922C11.8669 1.17693 11.7415 1.22501 11.6467 1.31333L4.66673 8.29333L2.02006 5.64667Z"
+                                fill="white" stroke="white" />
+                        </svg>
+                    </button>
+                    <span class="text-[14px] leading-[15px] ml-[8px] hidden xs:block">Search results</span>
+                </div>
+                <div class="flex items-center px-[12px] border-r-2 border-of-gray cursor-pointer">
+                    <button
+                        class="h-[24px] w-[24px] flex items-center justify-center bg-of-dark border border-of-dark rounded-full text-white text-[14px] leading-[15px] font-semibold">
+                        2
+                    </button>
+                    <span class="text-[14px] leading-[15px] ml-[8px] font-bold">Travelers</span>
+                </div>
+                <div class="flex items-center px-[12px] cursor-pointer">
+                    <button
+                        class="h-[24px] w-[24px] flex items-center justify-center border border-of-dark rounded-full text-[14px] leading-[15px] font-semibold">
+                        3
+                    </button>
+                    <span class="text-[14px] leading-[15px] ml-[8px]">Checkout</span>
+                </div>
+            </div>
+            <section class="flex mt-[40px] mb-[180px] flex-col lg:flex-row">
                 <div class="pr-2 w-full">
-                    <div class="">
+                    <div class="bg-white rounded-[20px] border border-of-gray p-4 mb-[12px]">
+                        <div class="">
+                            <div
+                                class="flex items-center justify-between pb-[14px] border-b-2 border-dashed border-of-main pr-4">
+                                <h4 class="text-[18px] leading-[19px] font-pp">Areo Airlines</h4>
+                                <img src="https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fair-peace.png?alt=media&token=378c6d75-683c-4fa9-ba17-ee7d0805f8a8"
+                                    alt="" class="">
+                            </div>
+                            <div class="flex border-b-2 border-dashed border-of-main">
+                                <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
+                                    <h3 class="text-[14px] leading-[17px]">Lagos</h3>
+                                    <h3 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
+                                        Muritala Muhammad Airport 2</h3>
+                                </div>
+                                <div
+                                    class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
+                                    <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
+                                    <div class="flex items-center justify-between">
+                                        <div class="">
+                                            <span class="text-[14px] leading-[17px] font-semibold">6:30am</span>
+                                            <h3 class="text-[14px] leading-[17px] block lg:hidden">Lagos</h3>
+                                        </div>
+                                        <svg class="mx-[16px]" width="161" height="32" viewBox="0 0 161 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 16H160.5" stroke="#10182C" stroke-dasharray="2 2" />
+                                            <rect width="32" height="32" transform="translate(65)" fill="white" />
+                                            <path
+                                                d="M89.3242 15.955C89.3242 16.177 89.2796 16.3967 89.1932 16.6012C89.1067 16.8057 88.98 16.9907 88.8207 17.1454C88.6614 17.3 88.4727 17.4211 88.2657 17.5015C88.0588 17.5818 87.8378 17.6199 87.6159 17.6133L83.6676 17.4975L80.7892 23.45C80.5584 23.9283 80.0726 24.2333 79.5409 24.2333C79.4317 24.2334 79.3237 24.2103 79.2241 24.1655C79.1245 24.1208 79.0356 24.0554 78.9631 23.9737C78.8906 23.8921 78.8363 23.7959 78.8038 23.6917C78.7712 23.5875 78.7611 23.4775 78.7742 23.3691L79.4934 17.375L76.3559 17.2833L75.9476 18.4008C75.8719 18.6077 75.7346 18.7863 75.5541 18.9125C75.3736 19.0388 75.1587 19.1065 74.9384 19.1066C74.8397 19.1066 74.742 19.0872 74.6509 19.0494C74.5597 19.0116 74.4769 18.9562 74.4072 18.8864C74.3374 18.8166 74.2822 18.7337 74.2445 18.6425C74.2068 18.5514 74.1874 18.4536 74.1876 18.355V17.125L73.5126 16.9841C73.2761 16.9349 73.0639 16.8057 72.9116 16.6183C72.7592 16.431 72.676 16.1969 72.676 15.9554C72.676 15.7139 72.7592 15.4798 72.9116 15.2924C73.0639 15.105 73.2761 14.9759 73.5126 14.9266L74.1876 14.7866V13.555C74.1874 13.3721 74.254 13.1954 74.3749 13.0582C74.4959 12.921 74.6628 12.8327 74.8442 12.81L74.9384 12.8041C75.1584 12.8043 75.3731 12.872 75.5534 12.9981C75.7337 13.1242 75.871 13.3025 75.9467 13.5091L76.3567 14.6258L79.4826 14.5341L78.7742 8.63079C78.7727 8.61555 78.7716 8.60026 78.7709 8.58496L78.7692 8.53912C78.7692 8.11329 79.1151 7.76746 79.5409 7.76746C80.0284 7.76746 80.4767 8.02329 80.7267 8.43412L80.7892 8.55079L83.6251 14.4133L87.6167 14.2966C88.0565 14.2838 88.4834 14.4463 88.8035 14.7482C89.1235 15.0501 89.3105 15.4668 89.3234 15.9066L89.3242 15.955Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                        <div class="">
+                                            <span class="text-[14px] leading-[17px] font-semibold">7:40am</span>
+                                            <h3 class="text-[14px] leading-[17px] block lg:hidden">Abuja</h3>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="mr-[4px]" width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00004 1.83329C7.50293 1.83329 8.94427 2.43032 10.007 3.49302C11.0697 4.55573 11.6667 5.99707 11.6667 7.49996C11.6667 9.00285 11.0697 10.4442 10.007 11.5069C8.94427 12.5696 7.50293 13.1666 6.00004 13.1666C4.49715 13.1666 3.05581 12.5696 1.9931 11.5069C0.930396 10.4442 0.333374 9.00285 0.333374 7.49996C0.333374 5.99707 0.930396 4.55573 1.9931 3.49302C3.05581 2.43032 4.49715 1.83329 6.00004 1.83329ZM6.00004 3.83329C5.87922 3.8333 5.76248 3.87705 5.67142 3.95647C5.58036 4.03589 5.52114 4.14559 5.50471 4.26529L5.50004 4.33329V7.33329L5.50471 7.40129C5.52117 7.52097 5.58041 7.63063 5.67147 7.71002C5.76252 7.7894 5.87924 7.83314 6.00004 7.83314C6.12084 7.83314 6.23756 7.7894 6.32862 7.71002C6.41967 7.63063 6.47891 7.52097 6.49537 7.40129L6.50004 7.33329V4.33329L6.49537 4.26529C6.47894 4.14559 6.41972 4.03589 6.32866 3.95647C6.2376 3.87705 6.12087 3.8333 6.00004 3.83329ZM10.78 1.91529L10.8347 1.95596L11.6007 2.62263C11.6967 2.70574 11.7575 2.82226 11.7707 2.94854C11.7839 3.07482 11.7486 3.20141 11.6719 3.30261C11.5953 3.40381 11.4829 3.47204 11.3578 3.49347C11.2326 3.51489 11.104 3.48789 10.998 3.41796L10.944 3.37729L10.178 2.71063C10.0829 2.62734 10.0228 2.51108 10.0099 2.38527C9.99707 2.25947 10.0323 2.13346 10.1087 2.03262C10.185 1.93179 10.2967 1.86362 10.4213 1.84185C10.5458 1.82008 10.674 1.84632 10.78 1.91529ZM7.50004 0.166626C7.62672 0.166665 7.74867 0.214789 7.84124 0.301274C7.9338 0.38776 7.99009 0.506158 7.99872 0.632546C8.00736 0.758934 7.9677 0.883887 7.88775 0.982159C7.80781 1.08043 7.69354 1.14469 7.56804 1.16196L7.50004 1.16663H4.50004C4.37336 1.16659 4.25141 1.11846 4.15885 1.03198C4.06628 0.945492 4.00999 0.827094 4.00136 0.700706C3.99272 0.574318 4.03238 0.449365 4.11233 0.351093C4.19227 0.252822 4.30654 0.18856 4.43204 0.171293L4.50004 0.166626H7.50004Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                        <span class="text-[12px] leading-[15px] font-medium">1hr 10m</span>
+                                    </div>
+                                </div>
+                                <div class="py-[32px] px-[24px] hidden lg:block">
+                                    <h3 class="text-[14px] leading-[17px]">Abuja</h3>
+                                    <h3 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
+                                        Dr Nnamdi Azikwe Airport</h3>
+                                </div>
+                            </div>
+                            <div class="flex border-b-2 border-dashed border-of-main">
+                                <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
+                                    <h3 class="text-[14px] leading-[17px]">Abuja</h3>
+                                    <h3 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
+                                        Dr Nnamdi Azikwe Airport</h3>
+                                </div>
+                                <div
+                                    class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
+                                    <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
+                                    <div class="flex items-center justify-between">
+                                        <div class="">
+                                            <span class="text-[14px] leading-[17px] font-semibold">2:30am</span>
+                                            <h3 class="text-[14px] leading-[17px] block lg:hidden">Abuja</h3>
+                                        </div>
+                                        <svg class="mx-[16px]" width="161" height="32" viewBox="0 0 161 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 16H160.5" stroke="#10182C" stroke-dasharray="2 2" />
+                                            <rect width="32" height="32" transform="translate(65)" fill="white" />
+                                            <path
+                                                d="M89.3242 15.955C89.3242 16.177 89.2796 16.3967 89.1932 16.6012C89.1067 16.8057 88.98 16.9907 88.8207 17.1454C88.6614 17.3 88.4727 17.4211 88.2657 17.5015C88.0588 17.5818 87.8378 17.6199 87.6159 17.6133L83.6676 17.4975L80.7892 23.45C80.5584 23.9283 80.0726 24.2333 79.5409 24.2333C79.4317 24.2334 79.3237 24.2103 79.2241 24.1655C79.1245 24.1208 79.0356 24.0554 78.9631 23.9737C78.8906 23.8921 78.8363 23.7959 78.8038 23.6917C78.7712 23.5875 78.7611 23.4775 78.7742 23.3691L79.4934 17.375L76.3559 17.2833L75.9476 18.4008C75.8719 18.6077 75.7346 18.7863 75.5541 18.9125C75.3736 19.0388 75.1587 19.1065 74.9384 19.1066C74.8397 19.1066 74.742 19.0872 74.6509 19.0494C74.5597 19.0116 74.4769 18.9562 74.4072 18.8864C74.3374 18.8166 74.2822 18.7337 74.2445 18.6425C74.2068 18.5514 74.1874 18.4536 74.1876 18.355V17.125L73.5126 16.9841C73.2761 16.9349 73.0639 16.8057 72.9116 16.6183C72.7592 16.431 72.676 16.1969 72.676 15.9554C72.676 15.7139 72.7592 15.4798 72.9116 15.2924C73.0639 15.105 73.2761 14.9759 73.5126 14.9266L74.1876 14.7866V13.555C74.1874 13.3721 74.254 13.1954 74.3749 13.0582C74.4959 12.921 74.6628 12.8327 74.8442 12.81L74.9384 12.8041C75.1584 12.8043 75.3731 12.872 75.5534 12.9981C75.7337 13.1242 75.871 13.3025 75.9467 13.5091L76.3567 14.6258L79.4826 14.5341L78.7742 8.63079C78.7727 8.61555 78.7716 8.60026 78.7709 8.58496L78.7692 8.53912C78.7692 8.11329 79.1151 7.76746 79.5409 7.76746C80.0284 7.76746 80.4767 8.02329 80.7267 8.43412L80.7892 8.55079L83.6251 14.4133L87.6167 14.2966C88.0565 14.2838 88.4834 14.4463 88.8035 14.7482C89.1235 15.0501 89.3105 15.4668 89.3234 15.9066L89.3242 15.955Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                        <div class="">
+                                            <span class="text-[14px] leading-[17px] font-semibold">3:55am</span>
+                                            <h3 class="text-[14px] leading-[17px] block lg:hidden">Lagos</h3>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg class="mr-[4px]" width="12" height="14" viewBox="0 0 12 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00004 1.83329C7.50293 1.83329 8.94427 2.43032 10.007 3.49302C11.0697 4.55573 11.6667 5.99707 11.6667 7.49996C11.6667 9.00285 11.0697 10.4442 10.007 11.5069C8.94427 12.5696 7.50293 13.1666 6.00004 13.1666C4.49715 13.1666 3.05581 12.5696 1.9931 11.5069C0.930396 10.4442 0.333374 9.00285 0.333374 7.49996C0.333374 5.99707 0.930396 4.55573 1.9931 3.49302C3.05581 2.43032 4.49715 1.83329 6.00004 1.83329ZM6.00004 3.83329C5.87922 3.8333 5.76248 3.87705 5.67142 3.95647C5.58036 4.03589 5.52114 4.14559 5.50471 4.26529L5.50004 4.33329V7.33329L5.50471 7.40129C5.52117 7.52097 5.58041 7.63063 5.67147 7.71002C5.76252 7.7894 5.87924 7.83314 6.00004 7.83314C6.12084 7.83314 6.23756 7.7894 6.32862 7.71002C6.41967 7.63063 6.47891 7.52097 6.49537 7.40129L6.50004 7.33329V4.33329L6.49537 4.26529C6.47894 4.14559 6.41972 4.03589 6.32866 3.95647C6.2376 3.87705 6.12087 3.8333 6.00004 3.83329ZM10.78 1.91529L10.8347 1.95596L11.6007 2.62263C11.6967 2.70574 11.7575 2.82226 11.7707 2.94854C11.7839 3.07482 11.7486 3.20141 11.6719 3.30261C11.5953 3.40381 11.4829 3.47204 11.3578 3.49347C11.2326 3.51489 11.104 3.48789 10.998 3.41796L10.944 3.37729L10.178 2.71063C10.0829 2.62734 10.0228 2.51108 10.0099 2.38527C9.99707 2.25947 10.0323 2.13346 10.1087 2.03262C10.185 1.93179 10.2967 1.86362 10.4213 1.84185C10.5458 1.82008 10.674 1.84632 10.78 1.91529ZM7.50004 0.166626C7.62672 0.166665 7.74867 0.214789 7.84124 0.301274C7.9338 0.38776 7.99009 0.506158 7.99872 0.632546C8.00736 0.758934 7.9677 0.883887 7.88775 0.982159C7.80781 1.08043 7.69354 1.14469 7.56804 1.16196L7.50004 1.16663H4.50004C4.37336 1.16659 4.25141 1.11846 4.15885 1.03198C4.06628 0.945492 4.00999 0.827094 4.00136 0.700706C3.99272 0.574318 4.03238 0.449365 4.11233 0.351093C4.19227 0.252822 4.30654 0.18856 4.43204 0.171293L4.50004 0.166626H7.50004Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                        <span class="text-[12px] leading-[15px] font-medium">1hr 10m</span>
+                                    </div>
+                                </div>
+                                <div class="py-[32px] px-[24px] hidden lg:block">
+                                    <h3 class="text-[14px] leading-[17px]">Lagos</h3>
+                                    <h3 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
+                                        Muritala Muhammad Airport 2</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-[12px]">
+                            <svg class="mr-[4px]" width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.39333 1.18669C9.11205 0.905589 8.73066 0.747681 8.33299 0.747681C7.93533 0.747681 7.55394 0.905589 7.27266 1.18669L0.686661 7.77336C0.547371 7.91265 0.43688 8.07801 0.361497 8.26C0.286114 8.44199 0.247314 8.63704 0.247314 8.83403C0.247314 9.03101 0.286114 9.22607 0.361497 9.40806C0.43688 9.59005 0.547371 9.75541 0.686661 9.89469L1.46799 10.6754C1.80799 11.016 2.28599 10.9554 2.57466 10.7834C2.7339 10.6888 2.92009 10.65 3.10384 10.673C3.28759 10.6961 3.45843 10.7797 3.58938 10.9106C3.72033 11.0416 3.80393 11.2124 3.82698 11.3962C3.85003 11.5799 3.81121 11.7661 3.71666 11.9254C3.54533 12.214 3.48399 12.692 3.82466 13.032L4.60666 13.8134C4.74595 13.9526 4.91131 14.0631 5.0933 14.1385C5.27529 14.2139 5.47034 14.2527 5.66733 14.2527C5.86431 14.2527 6.05937 14.2139 6.24136 14.1385C6.42335 14.0631 6.58871 13.9526 6.72799 13.8134L13.3133 7.22803C13.4526 7.08874 13.5631 6.92338 13.6385 6.74139C13.7139 6.5594 13.7527 6.36435 13.7527 6.16736C13.7527 5.97038 13.7139 5.77532 13.6385 5.59333C13.5631 5.41134 13.4526 5.24598 13.3133 5.10669L12.5327 4.32536C12.1927 3.98536 11.714 4.04536 11.4253 4.21736C11.2661 4.31191 11.0799 4.35073 10.8961 4.32768C10.7124 4.30463 10.5416 4.22103 10.4106 4.09008C10.2797 3.95913 10.1961 3.78829 10.173 3.60454C10.15 3.42079 10.1888 3.2346 10.2833 3.07536C10.4553 2.78669 10.516 2.30869 10.1753 1.96869L9.39333 1.18669Z"
+                                    fill="#10182C" />
+                            </svg>
+                            <span class="text-[12px] leading-[15px] font-medium">Economy.</span>
+                            <RouterLink to="/" class="text-[12px] leading-[15px] font-medium underline">
+                                Flight details</RouterLink>
+                        </div>
+                    </div>
+                    <div class="mt-[40px]">
                         <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Your details</h3>
                         <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4">
                             <div class="px-[20px] py-[16px] bg-[#FFE224] rounded-xl relative">
                                 <h3 class="text-[16px] leading-[19px] font-semibold">Double-check your personal details</h3>
                                 <h3 class="text-[14px] leading-[16px] mt-[10px]">Please enter the names as they appear in
                                     your travel documentation</h3>
+                                <img src="@/assets/images/passport.svg" alt="" class="absolute top-[-40px] right-[-25px]">
                             </div>
 
                             <div class="mt-[35px]">
-                                <div class="">
-                                    <div class="pb-[19px] border-b border-of-gray">
+                                <div class="pb-[32px] border-b border-of-gray">
+                                    <div class="pb-[19px] border-b border-of-gray flex items-center justify-between">
                                         <span class="text-[14px] leading-[16px] font-medium">Traveler 1</span>
+                                        <button class="block xs:hidden">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                viewBox="0 0 20 20" fill="none">
+                                                <path
+                                                    d="M8.33342 4.16667H11.6667C11.6667 3.72464 11.4912 3.30072 11.1786 2.98816C10.866 2.67559 10.4421 2.5 10.0001 2.5C9.55805 2.5 9.13413 2.67559 8.82157 2.98816C8.50901 3.30072 8.33342 3.72464 8.33342 4.16667ZM7.08342 4.16667C7.08342 3.78364 7.15886 3.40437 7.30543 3.05051C7.45201 2.69664 7.66685 2.37511 7.93769 2.10427C8.20852 1.83343 8.53006 1.61859 8.88392 1.47202C9.23779 1.32544 9.61706 1.25 10.0001 1.25C10.3831 1.25 10.7624 1.32544 11.1162 1.47202C11.4701 1.61859 11.7916 1.83343 12.0625 2.10427C12.3333 2.37511 12.5482 2.69664 12.6947 3.05051C12.8413 3.40437 12.9167 3.78364 12.9167 4.16667H17.7084C17.8742 4.16667 18.0331 4.23251 18.1504 4.34973C18.2676 4.46694 18.3334 4.62591 18.3334 4.79167C18.3334 4.95743 18.2676 5.1164 18.1504 5.23361C18.0331 5.35082 17.8742 5.41667 17.7084 5.41667H16.6084L15.6334 15.5092C15.5586 16.2825 15.1985 17.0002 14.6231 17.5224C14.0478 18.0445 13.2987 18.3336 12.5217 18.3333H7.47842C6.70163 18.3334 5.95267 18.0442 5.37754 17.5221C4.80241 16.9999 4.44236 16.2823 4.36758 15.5092L3.39175 5.41667H2.29175C2.12599 5.41667 1.96702 5.35082 1.84981 5.23361C1.7326 5.1164 1.66675 4.95743 1.66675 4.79167C1.66675 4.62591 1.7326 4.46694 1.84981 4.34973C1.96702 4.23251 2.12599 4.16667 2.29175 4.16667H7.08342ZM8.75008 8.125C8.75008 7.95924 8.68423 7.80027 8.56702 7.68306C8.44981 7.56585 8.29084 7.5 8.12508 7.5C7.95932 7.5 7.80035 7.56585 7.68314 7.68306C7.56593 7.80027 7.50008 7.95924 7.50008 8.125V14.375C7.50008 14.5408 7.56593 14.6997 7.68314 14.8169C7.80035 14.9342 7.95932 15 8.12508 15C8.29084 15 8.44981 14.9342 8.56702 14.8169C8.68423 14.6997 8.75008 14.5408 8.75008 14.375V8.125ZM11.8751 7.5C11.7093 7.5 11.5504 7.56585 11.4331 7.68306C11.3159 7.80027 11.2501 7.95924 11.2501 8.125V14.375C11.2501 14.5408 11.3159 14.6997 11.4331 14.8169C11.5504 14.9342 11.7093 15 11.8751 15C12.0408 15 12.1998 14.9342 12.317 14.8169C12.4342 14.6997 12.5001 14.5408 12.5001 14.375V8.125C12.5001 7.95924 12.4342 7.80027 12.317 7.68306C12.1998 7.56585 12.0408 7.5 11.8751 7.5Z"
+                                                    fill="#10182C" />
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <div class="mt-[24px] flex items-center gap-x-[12px]">
-                                        <div class="flex flex-col">
+                                    <div class="mt-[24px] flex items-center gap-x-[12px] flex-wrap xs:flex-nowrap">
+                                        <div class="flex flex-col mb-2 xs:mb-0">
                                             <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
                                             <div
                                                 class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
@@ -95,7 +241,7 @@ const selectCurrency = (c) => {
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col w-full">
+                                        <div class="flex flex-col w-full mb-2 xs:mb-0">
                                             <span class="text-[14px] leading-[19px] font-medium mb-[12px]">First name</span>
                                             <input type="text" placeholder="As written on passport"
                                                 class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
@@ -105,7 +251,7 @@ const selectCurrency = (c) => {
                                             <input type="text" placeholder="As written on passport"
                                                 class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
                                         </div>
-                                        <button class="">
+                                        <button class="hidden xs:block">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                 viewBox="0 0 20 20" fill="none">
                                                 <path
@@ -115,11 +261,138 @@ const selectCurrency = (c) => {
                                         </button>
                                     </div>
                                 </div>
+                                <div class="mt-[16px]">
+                                    <button class="flex items-center">
+                                        <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="19" height="18"
+                                            viewBox="0 0 19 18" fill="none">
+                                            <path
+                                                d="M13.5833 8C14.7989 8 15.9647 8.48288 16.8242 9.34243C17.6837 10.202 18.1666 11.3678 18.1666 12.5833C18.1666 13.7989 17.6837 14.9647 16.8242 15.8242C15.9647 16.6838 14.7989 17.1667 13.5833 17.1667C12.3677 17.1667 11.2019 16.6838 10.3424 15.8242C9.48284 14.9647 8.99996 13.7989 8.99996 12.5833C8.99996 11.3678 9.48284 10.202 10.3424 9.34243C11.2019 8.48288 12.3677 8 13.5833 8ZM13.5833 9.66667L13.5083 9.6725C13.425 9.68771 13.3484 9.72791 13.2885 9.78775C13.2287 9.8476 13.1885 9.92425 13.1733 10.0075L13.1666 10.0833V12.1667H11.0816L11.0066 12.1733C10.9234 12.1885 10.8467 12.2287 10.7869 12.2886C10.727 12.3484 10.6868 12.4251 10.6716 12.5083L10.665 12.5833L10.6716 12.6583C10.6868 12.7416 10.727 12.8182 10.7869 12.8781C10.8467 12.9379 10.9234 12.9781 11.0066 12.9933L11.0816 13H13.1666V15.0858L13.1733 15.1608C13.1885 15.2441 13.2287 15.3207 13.2885 15.3806C13.3484 15.4404 13.425 15.4806 13.5083 15.4958L13.5833 15.5025L13.6583 15.4958C13.7415 15.4806 13.8182 15.4404 13.878 15.3806C13.9379 15.3207 13.9781 15.2441 13.9933 15.1608L14 15.0858V13L16.0866 13.0008L16.1616 12.9942C16.2449 12.979 16.3215 12.9388 16.3814 12.8789C16.4412 12.8191 16.4814 12.7424 16.4966 12.6592L16.5033 12.5842L16.4966 12.5092C16.4814 12.4258 16.441 12.3491 16.381 12.2892C16.321 12.2294 16.2442 12.1892 16.1608 12.1742L16.0858 12.1675H14V10.0842L13.9933 10.0092C13.9782 9.92576 13.9381 9.84893 13.8782 9.78893C13.8184 9.72892 13.7417 9.6886 13.6583 9.67333L13.5833 9.66667ZM10.8783 6.33333C11.2082 6.3334 11.5322 6.42049 11.8177 6.58583C12.1031 6.75117 12.3399 6.98889 12.5041 7.275C11.6425 7.45059 10.8365 7.83325 10.1558 8.38995C9.4751 8.94666 8.94012 9.66067 8.59705 10.4704C8.25398 11.28 8.11313 12.161 8.18667 13.0373C8.26021 13.9136 8.54591 14.7588 9.01913 15.5L9.00246 15.4992C8.00768 15.4992 7.05364 15.104 6.35022 14.4006C5.6468 13.6972 5.25163 12.7431 5.25163 11.7483V8.20833C5.25163 7.71105 5.44917 7.23414 5.8008 6.88251C6.15243 6.53088 6.62934 6.33333 7.12663 6.33333H10.8783ZM5.17163 6.33333C4.73024 6.79242 4.46546 7.39283 4.42413 8.02833L4.41829 8.20833V11.7492C4.41829 12.455 4.57746 13.1233 4.86246 13.72C4.36853 13.8521 3.85082 13.8689 3.34937 13.769C2.84792 13.6691 2.37617 13.4552 1.97058 13.1439C1.565 12.8326 1.23645 12.4321 1.01035 11.9735C0.784241 11.5149 0.666636 11.0105 0.666626 10.4992V8.20833C0.666568 7.73323 0.846872 7.27582 1.1711 6.92854C1.49533 6.58126 1.9393 6.37002 2.41329 6.3375L2.54163 6.33333H5.17163ZM15.4583 6.33333C15.9556 6.33333 16.4325 6.53088 16.7841 6.88251C17.1357 7.23414 17.3333 7.71105 17.3333 8.20833V8.675C16.3258 7.70557 14.9815 7.16485 13.5833 7.16667L13.3808 7.17083C13.2516 6.86002 13.0657 6.576 12.8325 6.33333H15.4583ZM14.4166 1.33333C14.9692 1.33333 15.4991 1.55283 15.8898 1.94353C16.2805 2.33423 16.5 2.86413 16.5 3.41667C16.5 3.9692 16.2805 4.4991 15.8898 4.88981C15.4991 5.28051 14.9692 5.5 14.4166 5.5C13.8641 5.5 13.3342 5.28051 12.9435 4.88981C12.5528 4.4991 12.3333 3.9692 12.3333 3.41667C12.3333 2.86413 12.5528 2.33423 12.9435 1.94353C13.3342 1.55283 13.8641 1.33333 14.4166 1.33333ZM8.99996 0.5C9.663 0.5 10.2989 0.763392 10.7677 1.23223C11.2366 1.70107 11.5 2.33696 11.5 3C11.5 3.66304 11.2366 4.29893 10.7677 4.76777C10.2989 5.23661 9.663 5.5 8.99996 5.5C8.33692 5.5 7.70103 5.23661 7.23219 4.76777C6.76335 4.29893 6.49996 3.66304 6.49996 3C6.49996 2.33696 6.76335 1.70107 7.23219 1.23223C7.70103 0.763392 8.33692 0.5 8.99996 0.5ZM3.58329 1.33333C4.13583 1.33333 4.66573 1.55283 5.05643 1.94353C5.44713 2.33423 5.66663 2.86413 5.66663 3.41667C5.66663 3.9692 5.44713 4.4991 5.05643 4.88981C4.66573 5.28051 4.13583 5.5 3.58329 5.5C3.03076 5.5 2.50085 5.28051 2.11015 4.88981C1.71945 4.4991 1.49996 3.9692 1.49996 3.41667C1.49996 2.86413 1.71945 2.33423 2.11015 1.94353C2.50085 1.55283 3.03076 1.33333 3.58329 1.33333Z"
+                                                fill="#1549FF" />
+                                        </svg>
+                                        <span class="text-[14px] leading-[15px] font-medium text-of-blue">Add
+                                            traveller</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-[40px]">
+                        <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Contact information</h3>
+                        <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4">
+                            <div class="flex">
+                                <div class="flex flex-col">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Booked By</span>
+                                    <div
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center ">
+                                        <span class="mr-1">Select passenger</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none">
+                                            <path
+                                                d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mt-[24px] flex items-center gap-x-[12px] pb-[32px] border-b border-[#D7E6FE] flex-wrap xs:flex-nowrap">
+                                <div class="flex flex-col mb-3 xs:mb-0">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
+                                    <div
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                        <span class="mr-1">Select</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                            fill="none">
+                                            <path
+                                                d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                fill="#10182C" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col w-full mb-3 xs:mb-0">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">First name</span>
+                                    <input type="text" placeholder="As written on passport"
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                </div>
+                                <div class="flex flex-col w-full">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Last name</span>
+                                    <input type="text" placeholder="As written on passport"
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                </div>
+                            </div>
+                            <div class="mt-[24px] flex items-center gap-x-[12px] flex-wrap xs:flex-nowrap">
+                                <div class="flex flex-col w-full mb-3 xs:mb-0">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px] w-full">Phone
+                                        Number</span>
+                                    <div class="flex items-center w-full">
+                                        <div
+                                            class="mr-[12px] px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            <span class="mr-1">+234</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path
+                                                    d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                    fill="#10182C" />
+                                            </svg>
+                                        </div>
+
+                                        <input type="text" placeholder="xxx-xxxx-xxx"
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col w-full">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Email address</span>
+                                    <input type="text" placeholder="As written on passport"
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                </div>
+                            </div>
+
+                            <div class="mt-[24px] flex items-center gap-x-[12px] flex-wrap xs:flex-nowrap">
+                                <div class="flex flex-col w-full mb-3 xs:mb-0">
+                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Address Line 1</span>
+                                    <input type="text" placeholder="Street, house number, landmark"
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                </div>
+                                <div class="flex items-center gap-x-[12px] w-full">
+                                    <div class="flex flex-col w-full">
+                                        <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Country</span>
+                                        <div
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            <span class="mr-1">Select</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path
+                                                    d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                    fill="#10182C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col w-full">
+                                        <span class="text-[14px] leading-[19px] font-medium mb-[12px]">State</span>
+                                        <div
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            <span class="mr-1">Select</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path
+                                                    d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                    fill="#10182C" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col w-full">
+                                        <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Postal code</span>
+                                        <input type="text" placeholder="x-x-x-x-x-x"
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-[480px]">
+                <div class="mt-12 lg:mt-0 w-full lg:w-[480px]">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Your booking</h3>
                     <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4">
                         <div class="text-[18px] leading-[19px] font-pp pb-2 border-b border-of-gray">
@@ -199,6 +472,10 @@ const selectCurrency = (c) => {
                     </div>
                 </div>
             </section>
+
+            <Perks />
+            <Cta />
+            <Footer />
         </div>
     </main>
 </template>
@@ -226,4 +503,5 @@ const selectCurrency = (c) => {
 .menu-enter-from,
 .menu-leave-to {
     transform: scale(0);
-}</style>
+}
+</style>

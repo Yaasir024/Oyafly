@@ -2,17 +2,21 @@
 import { ref } from "vue"
 import Header from '@/components/navigation/Header.vue';
 import Hero from '@/components/home/Hero.vue';
+import Perks from '@/components/home/Perks.vue';
+import Cta from '@/components/Cta.vue';
 import Footer from '@/components/navigation/Footer.vue';
 
 import { useClickOutside } from "@/composables/useClickOutside";
 
 
-const stops = ref(["any"])
+const stops = ref([""])
 const showStops = ref(true)
-const airlines = ref(["any"])
+const airlines = ref([""])
 const showAirlines = ref(true)
-const cabin = ref(["any"])
+const cabin = ref([""])
 const showCabin = ref(true)
+const flightTimes = ref([""])
+const showFlightTimes = ref(false)
 
 
 let sortOptions = ["cheapest", "fastest", "reccomended"]
@@ -36,119 +40,210 @@ const selectSortVal = (c) => {
         <div class="px-4 sm:px-6">
             <Header />
             <Hero />
-            <section class="flex mt-[44px]">
-                <div class="w-full 2xl:w-[350px] pl-[24px] pr-[28px] 2xl:shrink-0">
+            <section class="flex flex-col xl:flex-row mt-[44px] mb-[80px]">
+                <div class="w-full 2xl:w-[350px] pl-[24px] pr-[28px] 2xl:shrink-0 mb-[40px] xl:mb-0">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Filter your results</h3>
-                    <div class="mt-[24px] max-w-[200px]">
-                        <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
-                            @click="showStops = !showStops">
-                            <span class="text-[16px] leading-[19px] font-medium">Stops</span>
-                            <svg class="transition-all duration-200 ease-in-out"
-                                :class="showStops ? 'rotate-0' : 'rotate-180'" width="10" height="7" viewBox="0 0 10 7"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
-                                    fill="#10182C" />
-                            </svg>
-                        </div>
-                        <div class="overflow-hidden transition-all duration-200 ease-in-out"
-                            :class="showStops ? 'max-h-[777px]' : 'max-h-0'">
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="any" value="any" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
-                                <label for="any" class="font-medium text-gray-900">Any</label>
+                    <div class="flex flex-row xl:flex-col mt-[24px] xl:mt-0 flex-wrap">
+
+                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                            <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
+                                @click="showStops = !showStops">
+                                <span class="text-[16px] leading-[19px] font-medium">Stops</span>
+                                <svg class="transition-all duration-200 ease-in-out"
+                                    :class="showStops ? 'rotate-0' : 'rotate-180'" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
+                                        fill="#10182C" />
+                                </svg>
                             </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="non-stop" value="non-stop" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
-                                <label for="non-stop" class="font-medium text-gray-900">Non-stop (Direct)</label>
-                            </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="up-to-1" value="up-to-1" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
-                                <label for="up-to-1" class="font-medium text-gray-900">Up to 1 stop</label>
-                            </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="up-to-2" value="up-to-2" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
-                                <label for="up-to-2" class="font-medium text-gray-900">Up to 1 stop</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-[24px] max-w-[200px]">
-                        <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
-                            @click="showAirlines = !showAirlines">
-                            <span class="text-[16px] leading-[19px] font-medium">Airlines</span>
-                            <svg class="transition-all duration-200 ease-in-out"
-                                :class="showAirlines ? 'rotate-0' : 'rotate-180'" width="10" height="7" viewBox="0 0 10 7"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
-                                    fill="#10182C" />
-                            </svg>
-                        </div>
-                        <div class="overflow-hidden transition-all duration-200 ease-in-out"
-                            :class="showAirlines ? 'max-h-[777px]' : 'max-h-0'">
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="Areo Airlines" value="Areo Airlines" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="airlines" />
-                                <label for="Areo Airlines" class="font-medium text-gray-900">Areo Airlines</label>
-                            </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="Arik Air" value="Arik Air" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="airlines" />
-                                <label for="Arik Air" class="font-medium text-gray-900">Arik Air</label>
-                            </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="Dana Airlines" value="Dana Airlines" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="airlines" />
-                                <label for="Dana Airlines" class="font-medium text-gray-900">Dana Airlines</label>
-                            </div>
-                            <div class="flex py-[6px] items-center mt-[12px]">
-                                <input id="Dana Airlines" value="Dana Airlines" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="airlines" />
-                                <label for="Dana Airlines" class="font-medium text-gray-900">Dana Airlines</label>
+                            <div class="overflow-hidden transition-all duration-200 ease-in-out"
+                                :class="showStops ? 'max-h-[777px]' : 'max-h-0'">
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="any" value="any" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
+                                    <label for="any" class="font-medium text-gray-900">Any</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="non-stop" value="non-stop" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
+                                    <label for="non-stop" class="font-medium text-gray-900">Non-stop (Direct)</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="up-to-1" value="up-to-1" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
+                                    <label for="up-to-1" class="font-medium text-gray-900">Up to 1 stop</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="up-to-2" value="up-to-2" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="stops" />
+                                    <label for="up-to-2" class="font-medium text-gray-900">Up to 1 stop</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mt-[24px] max-w-[200px]">
-                        <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
-                            @click="showCabin = !showCabin">
-                            <span class="text-[16px] leading-[19px] font-medium">Cabin</span>
-                            <svg class="transition-all duration-200 ease-in-out"
-                                :class="showCabin ? 'rotate-0' : 'rotate-180'" width="10" height="7" viewBox="0 0 10 7"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
-                                    fill="#10182C" />
-                            </svg>
+                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                            <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
+                                @click="showAirlines = !showAirlines">
+                                <span class="text-[16px] leading-[19px] font-medium">Airlines</span>
+                                <svg class="transition-all duration-200 ease-in-out"
+                                    :class="showAirlines ? 'rotate-0' : 'rotate-180'" width="10" height="7"
+                                    viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
+                                        fill="#10182C" />
+                                </svg>
+                            </div>
+                            <div class="overflow-hidden transition-all duration-200 ease-in-out"
+                                :class="showAirlines ? 'max-h-[777px]' : 'max-h-0'">
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="Areo Airlines" value="Areo Airlines" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]"
+                                        v-model="airlines" />
+                                    <label for="Areo Airlines" class="font-medium text-gray-900">Areo Airlines</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="Arik Air" value="Arik Air" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]"
+                                        v-model="airlines" />
+                                    <label for="Arik Air" class="font-medium text-gray-900">Arik Air</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="Dana Airlines" value="Dana Airlines" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]"
+                                        v-model="airlines" />
+                                    <label for="Dana Airlines" class="font-medium text-gray-900">Dana Airlines</label>
+                                </div>
+                                <div class="flex py-[6px] items-center mt-[12px]">
+                                    <input id="Dana Airlines" value="Dana Airlines" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]"
+                                        v-model="airlines" />
+                                    <label for="Dana Airlines" class="font-medium text-gray-900">Dana Airlines</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="overflow-hidden transition-all duration-200 ease-in-out"
-                            :class="showCabin ? 'max-h-[777px]' : 'max-h-0'">
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="Economy Discount" value="Economy Discount" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
-                                <label for="Economy Discount" class="font-medium text-gray-900">Economy Discount</label>
+                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                            <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
+                                @click="showCabin = !showCabin">
+                                <span class="text-[16px] leading-[19px] font-medium">Cabin</span>
+                                <svg class="transition-all duration-200 ease-in-out"
+                                    :class="showCabin ? 'rotate-0' : 'rotate-180'" width="10" height="7" viewBox="0 0 10 7"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
+                                        fill="#10182C" />
+                                </svg>
                             </div>
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="Economy" value="Economy" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
-                                <label for="Economy" class="font-medium text-gray-900">Economy</label>
+                            <div class="overflow-hidden transition-all duration-200 ease-in-out"
+                                :class="showCabin ? 'max-h-[777px]' : 'max-h-0'">
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="Economy Discount" value="Economy Discount" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
+                                    <label for="Economy Discount" class="font-medium text-gray-900">Economy Discount</label>
+                                </div>
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="Economy" value="Economy" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
+                                    <label for="Economy" class="font-medium text-gray-900">Economy</label>
+                                </div>
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="Economy Premium" value="Economy Premium" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
+                                    <label for="Economy Premium" class="font-medium text-gray-900">Economy Premium</label>
+                                </div>
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="Business" value="Business" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
+                                    <label for="Business" class="font-medium text-gray-900">Business</label>
+                                </div>
+                                <div class="flex py-[6px] items-center pt-[12px]">
+                                    <input id="First Class" value="First Class" type="checkbox"
+                                        class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
+                                    <label for="First Class" class="font-medium text-gray-900">First Class</label>
+                                </div>
                             </div>
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="Economy Premium" value="Economy Premium" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
-                                <label for="Economy Premium" class="font-medium text-gray-900">Economy Premium</label>
+                        </div>
+                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                            <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
+                                @click="showFlightTimes = !showFlightTimes">
+                                <span class="text-[16px] leading-[19px] font-medium">Flight Times</span>
+                                <svg class="transition-all duration-200 ease-in-out"
+                                    :class="showFlightTimes ? 'rotate-0' : 'rotate-180'" width="10" height="7"
+                                    viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.93202 6.66663C9.64802 6.66663 10.0307 5.82329 9.55869 5.28463L5.87802 1.07796C5.76852 0.952816 5.63353 0.852527 5.48211 0.783815C5.33068 0.715103 5.16631 0.679555 5.00002 0.679555C4.83374 0.679555 4.66937 0.715103 4.51794 0.783814C4.36651 0.852527 4.23153 0.952816 4.12202 1.07796L0.44069 5.28463C-0.0306434 5.82329 0.352023 6.66663 1.06736 6.66663L8.93269 6.66663L8.93202 6.66663Z"
+                                        fill="#10182C" />
+                                </svg>
                             </div>
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="Business" value="Business" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
-                                <label for="Business" class="font-medium text-gray-900">Business</label>
-                            </div>
-                            <div class="flex py-[6px] items-center pt-[12px]">
-                                <input id="First Class" value="First Class" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 mr-[10px]" v-model="cabin" />
-                                <label for="First Class" class="font-medium text-gray-900">First Class</label>
+                            <div class="overflow-hidden transition-all duration-200 ease-in-out"
+                                :class="showFlightTimes ? 'max-h-[777px]' : 'max-h-0'">
+                                <div class="py-[6px] pt-[12px] mb-[25px]">
+                                    <div class="flex items-center ">
+                                        <span class="text-[14px] leading-[17px] font-semibold mr-2">Take-off</span>
+                                        <span class="text-[14px] leading-[17px]">LOS</span>
+                                    </div>
+                                    <div class="flex items-center justify-between py-[12px]">
+                                        <span class="text-[14px] leading-[17px]">Thu 06:30am</span>
+                                        <span class="text-[14px] leading-[17px]">11:30pm</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="16" viewBox="0 0 196 16"
+                                        fill="none">
+                                        <rect opacity="0.2" y="7" width="196" height="2" fill="#10182C" />
+                                        <rect y="8" width="196" height="1" fill="#10182C" />
+                                        <circle cx="8" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                        <circle cx="188" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                    </svg>
+                                </div>
+                                <div class="py-[6px] pt-[12px] mb-[25px]">
+                                    <div class="flex items-center ">
+                                        <span class="text-[14px] leading-[17px] font-semibold mr-2">Take-off</span>
+                                        <span class="text-[14px] leading-[17px]">ABV</span>
+                                    </div>
+                                    <div class="flex items-center justify-between py-[12px]">
+                                        <span class="text-[14px] leading-[17px]">Thu 06:30am</span>
+                                        <span class="text-[14px] leading-[17px]">11:30pm</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="16" viewBox="0 0 196 16"
+                                        fill="none">
+                                        <rect opacity="0.2" y="7" width="196" height="2" fill="#10182C" />
+                                        <rect y="8" width="196" height="1" fill="#10182C" />
+                                        <circle cx="8" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                        <circle cx="188" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                    </svg>
+                                </div>
+                                <div class="py-[6px] pt-[12px] mb-[25px]">
+                                    <div class="flex items-center ">
+                                        <span class="text-[14px] leading-[17px] font-semibold mr-2">Take-off</span>
+                                        <span class="text-[14px] leading-[17px]">LOS</span>
+                                    </div>
+                                    <div class="flex items-center justify-between py-[12px]">
+                                        <span class="text-[14px] leading-[17px]">SUN 06:30am</span>
+                                        <span class="text-[14px] leading-[17px]">11:30pm</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="16" viewBox="0 0 196 16"
+                                        fill="none">
+                                        <rect opacity="0.2" y="7" width="196" height="2" fill="#10182C" />
+                                        <rect y="8" width="196" height="1" fill="#10182C" />
+                                        <circle cx="8" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                        <circle cx="188" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                    </svg>
+                                </div>
+                                <div class="py-[6px] pt-[12px] mb-[25px]">
+                                    <div class="flex items-center ">
+                                        <span class="text-[14px] leading-[17px] font-semibold mr-2">Take-off</span>
+                                        <span class="text-[14px] leading-[17px]">ABV</span>
+                                    </div>
+                                    <div class="flex items-center justify-between py-[12px]">
+                                        <span class="text-[14px] leading-[17px]">SUN 06:30am</span>
+                                        <span class="text-[14px] leading-[17px]">11:30pm</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="196" height="16" viewBox="0 0 196 16"
+                                        fill="none">
+                                        <rect opacity="0.2" y="7" width="196" height="2" fill="#10182C" />
+                                        <rect y="8" width="196" height="1" fill="#10182C" />
+                                        <circle cx="8" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                        <circle cx="188" cy="8" r="7.5" fill="#F3F7FF" stroke="#10182C" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,7 +278,7 @@ const selectSortVal = (c) => {
                     </div>
                     <div class="mt-[16px]">
                         <div class="bg-white rounded-[20px] border border-of-gray p-4 mb-[12px]" v-for="n in 4" :key="n">
-                            <div class="flex">
+                            <div class="flex flex-col lg:flex-row">
                                 <div class="border-r-2 border-dashed border-of-main ">
                                     <div
                                         class="flex items-center justify-between pb-[14px] border-b-2 border-dashed border-of-main pr-4">
@@ -192,7 +287,8 @@ const selectSortVal = (c) => {
                                             alt="" class="">
                                     </div>
                                     <div class="flex border-b-2 border-dashed border-of-main">
-                                        <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main">
+                                        <div
+                                            class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Lagos</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
@@ -202,7 +298,10 @@ const selectSortVal = (c) => {
                                             class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
                                             <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
                                             <div class="flex items-center justify-between">
-                                                <span class="text-[14px] leading-[17px] font-semibold">6:30am</span>
+                                                <div class="">
+                                                    <span class="text-[14px] leading-[17px] font-semibold">6:30am</span>
+                                                    <h3 class="text-[14px] leading-[17px] block lg:hidden">Lagos</h3>
+                                                </div>
                                                 <svg class="mx-[16px]" width="161" height="32" viewBox="0 0 161 32"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M0.5 16H160.5" stroke="#10182C" stroke-dasharray="2 2" />
@@ -211,7 +310,10 @@ const selectSortVal = (c) => {
                                                         d="M89.3242 15.955C89.3242 16.177 89.2796 16.3967 89.1932 16.6012C89.1067 16.8057 88.98 16.9907 88.8207 17.1454C88.6614 17.3 88.4727 17.4211 88.2657 17.5015C88.0588 17.5818 87.8378 17.6199 87.6159 17.6133L83.6676 17.4975L80.7892 23.45C80.5584 23.9283 80.0726 24.2333 79.5409 24.2333C79.4317 24.2334 79.3237 24.2103 79.2241 24.1655C79.1245 24.1208 79.0356 24.0554 78.9631 23.9737C78.8906 23.8921 78.8363 23.7959 78.8038 23.6917C78.7712 23.5875 78.7611 23.4775 78.7742 23.3691L79.4934 17.375L76.3559 17.2833L75.9476 18.4008C75.8719 18.6077 75.7346 18.7863 75.5541 18.9125C75.3736 19.0388 75.1587 19.1065 74.9384 19.1066C74.8397 19.1066 74.742 19.0872 74.6509 19.0494C74.5597 19.0116 74.4769 18.9562 74.4072 18.8864C74.3374 18.8166 74.2822 18.7337 74.2445 18.6425C74.2068 18.5514 74.1874 18.4536 74.1876 18.355V17.125L73.5126 16.9841C73.2761 16.9349 73.0639 16.8057 72.9116 16.6183C72.7592 16.431 72.676 16.1969 72.676 15.9554C72.676 15.7139 72.7592 15.4798 72.9116 15.2924C73.0639 15.105 73.2761 14.9759 73.5126 14.9266L74.1876 14.7866V13.555C74.1874 13.3721 74.254 13.1954 74.3749 13.0582C74.4959 12.921 74.6628 12.8327 74.8442 12.81L74.9384 12.8041C75.1584 12.8043 75.3731 12.872 75.5534 12.9981C75.7337 13.1242 75.871 13.3025 75.9467 13.5091L76.3567 14.6258L79.4826 14.5341L78.7742 8.63079C78.7727 8.61555 78.7716 8.60026 78.7709 8.58496L78.7692 8.53912C78.7692 8.11329 79.1151 7.76746 79.5409 7.76746C80.0284 7.76746 80.4767 8.02329 80.7267 8.43412L80.7892 8.55079L83.6251 14.4133L87.6167 14.2966C88.0565 14.2838 88.4834 14.4463 88.8035 14.7482C89.1235 15.0501 89.3105 15.4668 89.3234 15.9066L89.3242 15.955Z"
                                                         fill="#10182C" />
                                                 </svg>
-                                                <span class="text-[14px] leading-[17px] font-semibold">6:30am</span>
+                                                <div class="">
+                                                    <span class="text-[14px] leading-[17px] font-semibold">7:40am</span>
+                                                    <h3 class="text-[14px] leading-[17px] block lg:hidden">Abuja</h3>
+                                                </div>
                                             </div>
                                             <div class="flex items-center">
                                                 <svg class="mr-[4px]" width="12" height="14" viewBox="0 0 12 14" fill="none"
@@ -223,7 +325,7 @@ const selectSortVal = (c) => {
                                                 <span class="text-[12px] leading-[15px] font-medium">1hr 10m</span>
                                             </div>
                                         </div>
-                                        <div class="py-[32px] px-[24px]">
+                                        <div class="py-[32px] px-[24px] hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Abuja</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
@@ -231,7 +333,8 @@ const selectSortVal = (c) => {
                                         </div>
                                     </div>
                                     <div class="flex border-b-2 border-dashed border-of-main">
-                                        <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main">
+                                        <div
+                                            class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Abuja</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
@@ -241,7 +344,10 @@ const selectSortVal = (c) => {
                                             class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
                                             <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
                                             <div class="flex items-center justify-between">
-                                                <span class="text-[14px] leading-[17px] font-semibold">2:30am</span>
+                                                <div class="">
+                                                    <span class="text-[14px] leading-[17px] font-semibold">2:30am</span>
+                                                    <h3 class="text-[14px] leading-[17px] block lg:hidden">Abuja</h3>
+                                                </div>
                                                 <svg class="mx-[16px]" width="161" height="32" viewBox="0 0 161 32"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M0.5 16H160.5" stroke="#10182C" stroke-dasharray="2 2" />
@@ -250,7 +356,10 @@ const selectSortVal = (c) => {
                                                         d="M89.3242 15.955C89.3242 16.177 89.2796 16.3967 89.1932 16.6012C89.1067 16.8057 88.98 16.9907 88.8207 17.1454C88.6614 17.3 88.4727 17.4211 88.2657 17.5015C88.0588 17.5818 87.8378 17.6199 87.6159 17.6133L83.6676 17.4975L80.7892 23.45C80.5584 23.9283 80.0726 24.2333 79.5409 24.2333C79.4317 24.2334 79.3237 24.2103 79.2241 24.1655C79.1245 24.1208 79.0356 24.0554 78.9631 23.9737C78.8906 23.8921 78.8363 23.7959 78.8038 23.6917C78.7712 23.5875 78.7611 23.4775 78.7742 23.3691L79.4934 17.375L76.3559 17.2833L75.9476 18.4008C75.8719 18.6077 75.7346 18.7863 75.5541 18.9125C75.3736 19.0388 75.1587 19.1065 74.9384 19.1066C74.8397 19.1066 74.742 19.0872 74.6509 19.0494C74.5597 19.0116 74.4769 18.9562 74.4072 18.8864C74.3374 18.8166 74.2822 18.7337 74.2445 18.6425C74.2068 18.5514 74.1874 18.4536 74.1876 18.355V17.125L73.5126 16.9841C73.2761 16.9349 73.0639 16.8057 72.9116 16.6183C72.7592 16.431 72.676 16.1969 72.676 15.9554C72.676 15.7139 72.7592 15.4798 72.9116 15.2924C73.0639 15.105 73.2761 14.9759 73.5126 14.9266L74.1876 14.7866V13.555C74.1874 13.3721 74.254 13.1954 74.3749 13.0582C74.4959 12.921 74.6628 12.8327 74.8442 12.81L74.9384 12.8041C75.1584 12.8043 75.3731 12.872 75.5534 12.9981C75.7337 13.1242 75.871 13.3025 75.9467 13.5091L76.3567 14.6258L79.4826 14.5341L78.7742 8.63079C78.7727 8.61555 78.7716 8.60026 78.7709 8.58496L78.7692 8.53912C78.7692 8.11329 79.1151 7.76746 79.5409 7.76746C80.0284 7.76746 80.4767 8.02329 80.7267 8.43412L80.7892 8.55079L83.6251 14.4133L87.6167 14.2966C88.0565 14.2838 88.4834 14.4463 88.8035 14.7482C89.1235 15.0501 89.3105 15.4668 89.3234 15.9066L89.3242 15.955Z"
                                                         fill="#10182C" />
                                                 </svg>
-                                                <span class="text-[14px] leading-[17px] font-semibold">3:55am</span>
+                                                <div class="">
+                                                    <span class="text-[14px] leading-[17px] font-semibold">3:55am</span>
+                                                    <h3 class="text-[14px] leading-[17px] block lg:hidden">Lagos</h3>
+                                                </div>
                                             </div>
                                             <div class="flex items-center">
                                                 <svg class="mr-[4px]" width="12" height="14" viewBox="0 0 12 14" fill="none"
@@ -262,7 +371,7 @@ const selectSortVal = (c) => {
                                                 <span class="text-[12px] leading-[15px] font-medium">1hr 10m</span>
                                             </div>
                                         </div>
-                                        <div class="py-[32px] px-[24px]">
+                                        <div class="py-[32px] px-[24px] hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Lagos</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
@@ -270,8 +379,9 @@ const selectSortVal = (c) => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col justify-end w-[250px]">
-                                    <div class="pb-[12px] pl-[16px] border-b-2 border-dashed border-of-main">
+                                <div class="flex flex-col justify-end min-w-[250px] w-full">
+                                    <div
+                                        class="pt-[15px] lg:pt-0  pb-[12px] pl-[16px] border-b-2 border-dashed border-of-main">
                                         <div class="flex items-center">
                                             <svg class="mr-[4px]" width="14" height="15" viewBox="0 0 14 15" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -283,7 +393,8 @@ const selectSortVal = (c) => {
                                             <RouterLink to="/" class="text-[12px] leading-[15px] font-medium underline">
                                                 Flight details</RouterLink>
                                         </div>
-                                        <div class="flex items-center px-3 py-2 rounded-[20px] my-[12px] bg-[#D7E6FE80] w-full">
+                                        <div
+                                            class="flex items-center px-3 py-2 rounded-[20px] my-[12px] bg-[#D7E6FE80] w-full">
                                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -302,7 +413,8 @@ const selectSortVal = (c) => {
                                                 class="text-[16px] leading-[16px] line-through font-pp font-semibold">₦536,000</span>
                                         </div>
                                         <button class="rounded-xl p-2 bg-of-blue flex items-center justify-center w-full">
-                                            <span class="text-[14px] leading-normal font-semibold text-white">Book flight</span>
+                                            <span class="text-[14px] leading-normal font-semibold text-white">Book
+                                                flight</span>
                                             <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 viewBox="0 0 16 16" fill="none">
                                                 <path
@@ -317,6 +429,9 @@ const selectSortVal = (c) => {
                     </div>
                 </div>
             </section>
+            <Perks />
+            <Cta />
+            <Footer />
         </div>
-        <Footer />
-    </main></template>
+    </main>
+</template>
