@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const flights = [
     {
@@ -153,6 +156,10 @@ const flights = [
         }
     },
 ]
+
+const checkout = () => {
+    router.push('/flight')
+}
 </script>
 
 
@@ -168,7 +175,7 @@ const flights = [
         </div>
         <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
             <div class="" v-for="flight in flights" :key="flight.id">
-                <div class="w-[300px] xs:w-[320px] border border-[#D7E6FE] p-4 rounded-lg">
+                <div class="w-[300px] xs:w-[320px] border border-[#D7E6FE] p-4 rounded-lg cursor-pointer" @click="checkout">
                     <div class="flex items-center justify-between pb-[8px] border-b border-of-gray">
                         <h3 class="text-[18px] leading-[19px] font-pp">
                             {{ flight.airline }}
@@ -276,8 +283,8 @@ const flights = [
 .carousel::-webkit-scrollbar {
     display: none;
 }
-.carousel {
-  box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
-}
 
+.carousel {
+    box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
+}
 </style>

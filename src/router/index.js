@@ -20,12 +20,12 @@ const router = createRouter({
       component: () => import("../views/Search.vue"),
     },
     {
-      path: "/checkout",
+      path: "/flight",
       name: "checkout",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import("../views/Checkout.vue"),
+      component: () => import("../views/FlightDetails.vue"),
     },
   ],
   scrollBehavior(to, from, savedPosition) {
