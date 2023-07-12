@@ -53,7 +53,7 @@ const bookFlight = () => {
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Filter your results</h3>
                     <div class="flex flex-row xl:flex-col mt-[24px] xl:mt-0 flex-wrap">
 
-                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                        <div class="mt-[24px] max-w-full sm:max-w-[200px] w-full mr-6 xl:mr-0">
                             <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
                                 @click="showStops = !showStops">
                                 <span class="text-[16px] leading-[19px] font-medium">Stops</span>
@@ -89,7 +89,7 @@ const bookFlight = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                        <div class="mt-[24px] max-w-full sm:max-w-[200px] w-full mr-6 xl:mr-0">
                             <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
                                 @click="showAirlines = !showAirlines">
                                 <span class="text-[16px] leading-[19px] font-medium">Airlines</span>
@@ -129,7 +129,7 @@ const bookFlight = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                        <div class="mt-[24px] max-w-full sm:max-w-[200px] w-full mr-6 xl:mr-0">
                             <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
                                 @click="showCabin = !showCabin">
                                 <span class="text-[16px] leading-[19px] font-medium">Cabin</span>
@@ -170,7 +170,7 @@ const bookFlight = () => {
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-[24px] max-w-[200px] mr-6 xl:mr-0">
+                        <div class="mt-[24px] max-w-full sm:max-w-[200px] w-full mr-6 xl:mr-0">
                             <div class="flex items-center justify-between pb-2 border-b border-[#10182C33]"
                                 @click="showFlightTimes = !showFlightTimes">
                                 <span class="text-[16px] leading-[19px] font-medium">Flight Times</span>
