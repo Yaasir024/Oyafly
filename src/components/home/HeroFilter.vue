@@ -120,7 +120,7 @@ const search = () => {
     <div class="bg-white rounded-[20px] p-[6px] mt-2 flex flex-col xl:flex-row">
         <div
             class="flex flex-full xl:flex-75% flex-col md:flex-row md:items-center border-2 border-[#D7E6FE] bg-[#F3F7FF] rounded-[14px]">
-            <div class="h-[84px] flex items-center px-[12px] xl:px-[19px]  flex-1  relative"
+            <div class="h-[75px] md:h-[84px] flex items-center px-[12px] xl:px-[19px] border-b md:border-b-0 border-r-0 md:border-r border-[#D7E6FE] xl:flex-1  relative"
                 ref="fromMenu">
                 <div class="flex items-center" @click="showFromMenu = !showFromMenu">
                     <svg class="mr-[12px]" width="20" height="17" viewBox="0 0 20 17" fill="none"
@@ -159,7 +159,7 @@ const search = () => {
                     </div>
                 </transition>
                 <button @click="switchAirports"
-                    class="absolute top-[50%] translate-y-[-50%] right-[50%] md:right-[-25px] z-[4] h-[48px] w-[48px] rounded-full bg-white flex items-center justify-center border border-of-gray rotate-90 md:rotate-0">
+                    class="absolute bottom-[-25px] md:bottom-[50%] md:translate-y-[50%] right-[50%] md:right-[-25px] z-[4] h-[48px] w-[48px] rounded-full bg-white flex items-center justify-center border border-of-gray rotate-90 md:rotate-0">
                     <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0.997681 5.75272L1.00468 5.85272C1.02889 6.03264 1.11753 6.19767 1.25416 6.3172C1.39079 6.43673 1.56614 6.50265 1.74768 6.50272L14.4397 6.50272L11.2217 9.72272L11.1497 9.80672C11.0365 9.95892 10.9853 10.1483 11.0062 10.3368C11.0271 10.5253 11.1186 10.6989 11.2624 10.8226C11.4061 10.9463 11.5914 11.011 11.7809 11.0036C11.9704 10.9962 12.15 10.9173 12.2837 10.7827L16.7837 6.27872L16.8557 6.19472C16.9624 6.05025 17.0137 5.87228 17.0003 5.69317C16.9869 5.51406 16.9097 5.34571 16.7827 5.21872L12.2827 0.721721L12.1987 0.64972C12.0541 0.542734 11.8759 0.49125 11.6966 0.504649C11.5173 0.518049 11.3487 0.595441 11.2217 0.72272L11.1497 0.806722C11.0427 0.951272 10.9912 1.12945 11.0046 1.30879C11.018 1.48812 11.0954 1.65667 11.2227 1.78372L14.4437 5.00272L1.74768 5.00272L1.64568 5.00872C1.46613 5.03337 1.30157 5.1222 1.18245 5.25879C1.06332 5.39538 0.997688 5.57148 0.997681 5.75272ZM1.21768 16.7887L5.71268 21.2827L5.79668 21.3557C5.94115 21.4624 6.11912 21.5138 6.29823 21.5004C6.47734 21.487 6.64569 21.4097 6.77268 21.2827L6.84568 21.1987C6.95239 21.0543 7.00372 20.8763 6.99032 20.6972C6.97693 20.5181 6.8997 20.3497 6.77268 20.2227L3.55468 17.0057H16.2527L16.3547 16.9977C16.5342 16.9731 16.6988 16.8842 16.8179 16.7477C16.937 16.6111 17.0027 16.436 17.0027 16.2547L16.9957 16.1537C16.9713 15.974 16.8825 15.8092 16.7459 15.6899C16.6093 15.5705 16.4341 15.5048 16.2527 15.5047L3.55668 15.5057L6.77368 12.2827L6.84568 12.1987C6.9574 12.0464 7.00753 11.8576 6.98606 11.6699C6.96459 11.4822 6.87311 11.3096 6.72988 11.1864C6.58665 11.0633 6.40224 10.9987 6.21348 11.0056C6.02472 11.0126 5.84552 11.0904 5.71168 11.2237L1.21768 15.7277L1.14568 15.8127C1.03897 15.9572 0.987642 16.1352 1.00104 16.3143C1.01443 16.4934 1.09166 16.6617 1.21868 16.7887H1.21768Z"
@@ -168,7 +168,7 @@ const search = () => {
                 </button>
             </div>
             <!-- TO -->
-            <div class="h-[84px] flex items-center px-[12px] md:pr-[19px] md:pl-[38px]  flex-1 border-b md:border-r border-[#D7E6FE] relative"
+            <div class="h-[75px] md:h-[84px] flex items-center px-[12px] md:pr-[19px] md:pl-[38px]  xl:flex-1 border-b md:border-b-0 border-r-0 md:border-r border-[#D7E6FE] relative"
                 ref="toMenu">
                 <div class="flex items-center" @click="showToMenu = !showToMenu">
                     <svg class="mr-[12px]" width="19" height="18" viewBox="0 0 19 18" fill="none"
@@ -207,8 +207,8 @@ const search = () => {
                     </div>
                 </transition>
             </div>
-            <div class="h-[84px] flex items-center px-[12px] xl:px-[19px]  flex-1">
-                <div class="flex items-center">
+            <div class="h-[75px] md:h-[84px] flex items-center px-[12px] xl:px-[19px]  xl:flex-1">
+                <div class="hidden sm:flex items-center">
                     <svg class="mr-[12px]" width="19" height="18" viewBox="0 0 19 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
