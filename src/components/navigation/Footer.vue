@@ -76,5 +76,11 @@
 
         </div>
         <img src="@/assets/images/nav/footer-pattern.svg" alt="" class="mt-[50px]">
+        <div class="px-4 sm:px-6">
+
+            <div class="pt-[12px] border-t border-of-dark">
+                <span class="text-[14px] leading-[17px] tracking-[2%] font-semibold">Copyright, Oya Fly Ltd, 2023.</span>
+            </div>
+        </div>
     </footer>
 </template>

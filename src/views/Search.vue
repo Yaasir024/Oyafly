@@ -402,7 +402,7 @@ const bookFlight = () => {
                                                 Flight details</RouterLink>
                                         </div>
                                         <div
-                                            class="flex items-center px-3 py-2 rounded-[20px] my-[12px] bg-[#D7E6FE80] w-full">
+                                            class="flex items-center px-3 py-2 rounded-[12px] my-[12px] bg-[#D7E6FE80] w-full">
                                             <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
