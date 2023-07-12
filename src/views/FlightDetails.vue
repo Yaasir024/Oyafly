@@ -31,6 +31,24 @@ const selectCurrency = (c) => {
     currentCurrency.value = c
     showCurrencyNav.value = false
 }
+
+const contactTitle = ref("")
+const titleMenu = ref(null)
+const showTitleMenu = ref(false)
+
+useClickOutside(titleMenu, () => {
+    showTitleMenu.value = false;
+});
+const titles = [
+    "Dr",
+    "Mr.",
+    "Mrs.",
+    "Ms."
+]
+const selectTitle = (t) => {
+    contactTitle.value = t
+    showTitleMenu.value = false
+}
 </script>
 
 <template>
@@ -299,18 +317,32 @@ const selectCurrency = (c) => {
                             </div>
                             <div
                                 class="mt-[24px] flex items-center gap-x-[12px] pb-[32px] border-b border-[#D7E6FE] flex-wrap xs:flex-nowrap">
-                                <div class="flex flex-col mb-3 xs:mb-0">
-                                    <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
-                                    <div
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center  h-[48px] text-[16px] leading-[19px] tracking-[1%]">
-                                        <span class="mr-1">Select</span>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                            fill="none">
-                                            <path
-                                                d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
-                                                fill="#10182C" />
-                                        </svg>
+                                <div class="relative mb-3 xs:mb-0" ref="titleMenu">
+                                    <div class="flex flex-col ">
+                                        <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
+                                        <div @click="showTitleMenu = !showTitleMenu"
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center  h-[48px] text-[16px] leading-[19px] tracking-[1%]">
+                                            <span class="mr-1" v-if="contactTitle == ''">Select</span>
+                                            <span class="mr-1" v-else>{{ contactTitle }}</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 16 16" fill="none">
+                                                <path
+                                                    d="M4.06798 5.33337C3.35198 5.33337 2.96931 6.17671 3.44131 6.71537L7.12198 10.922C7.23148 11.0472 7.36647 11.1475 7.5179 11.2162C7.66932 11.2849 7.83369 11.3204 7.99998 11.3204C8.16626 11.3204 8.33063 11.2849 8.48206 11.2162C8.63349 11.1475 8.76848 11.0472 8.87798 10.922L12.5593 6.71537C13.0306 6.17671 12.648 5.33337 11.9326 5.33337H4.06731H4.06798Z"
+                                                    fill="#10182C" />
+                                            </svg>
+                                        </div>
                                     </div>
+                                    <transition name="menu">
+                                        <div class="absolute top-[85px] left-0 w-full z-[20]" v-if="showTitleMenu">
+                                            <ul class="bg-white border rounded-b-md">
+                                                <li class="px-2 py-2 cursor-pointer hover:bg-of-blue hover:text-main-purple capitalize text-base font-medium"
+                                                    v-for="title in titles" :key="title" @click="selectTitle(title)">
+                                                    {{ title }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </transition>
+
                                 </div>
                                 <div class="flex flex-col w-full mb-3 xs:mb-0">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">First name</span>

@@ -18,7 +18,7 @@ const showStops = ref(true)
 const airlines = ref([""])
 const showAirlines = ref(true)
 const cabin = ref([""])
-const showCabin = ref(true)
+const showCabin = ref(false)
 const flightTimes = ref([""])
 const showFlightTimes = ref(false)
 
