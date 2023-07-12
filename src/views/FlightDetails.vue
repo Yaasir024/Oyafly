@@ -65,7 +65,9 @@ const selectCurrency = (c) => {
                     </div>
                 </section>
                 <nav class="px-[24px] py-[12px]  flex items-center justify-between bg-white rounded-[20px]">
-                    <img src="/logo.svg" alt="" class="">
+                    <RouterLink to="/">
+                        <img src="/logo.svg" alt="" class="">
+                    </RouterLink>
                 </nav>
             </header>
             <div class="mt-[10px] bg-white rounded-[12px] py-[16px] flex items-center justify-center">
@@ -95,15 +97,16 @@ const selectCurrency = (c) => {
                     <span class="text-[14px] leading-[15px] ml-[8px]">Checkout</span>
                 </div>
             </div>
-            <section class="flex mt-[40px] mb-[180px] flex-col lg:flex-row">
+            <section class="flex mt-[40px] mb-[180px] flex-col xl:flex-row">
                 <div class="pr-2 w-full">
+                    <h3 class="text-[20px] leading-[19px] font-semibold font-pp mb-[12px]">Your flight</h3>
                     <div class="bg-white rounded-[20px] border border-of-gray p-4 mb-[12px]">
                         <div class="">
                             <div
                                 class="flex items-center justify-between pb-[14px] border-b-2 border-dashed border-of-main pr-4">
                                 <h4 class="text-[18px] leading-[19px] font-pp">Areo Airlines</h4>
                                 <img src="https://firebasestorage.googleapis.com/v0/b/projects-1a55a.appspot.com/o/oyafly%2Fairline-logo%2Fair-peace.png?alt=media&token=378c6d75-683c-4fa9-ba17-ee7d0805f8a8"
-                                    alt="" class="">
+                                    alt="" class="h-[27px] w-[27px]">
                             </div>
                             <div class="flex border-b-2 border-dashed border-of-main">
                                 <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
@@ -148,7 +151,7 @@ const selectCurrency = (c) => {
                                         Dr Nnamdi Azikwe Airport</h3>
                                 </div>
                             </div>
-                            <div class="flex border-b-2 border-dashed border-of-main">
+                            <div class="flex">
                                 <div class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
                                     <h3 class="text-[14px] leading-[17px]">Abuja</h3>
                                     <h3 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
@@ -199,7 +202,7 @@ const selectCurrency = (c) => {
                                     d="M9.39333 1.18669C9.11205 0.905589 8.73066 0.747681 8.33299 0.747681C7.93533 0.747681 7.55394 0.905589 7.27266 1.18669L0.686661 7.77336C0.547371 7.91265 0.43688 8.07801 0.361497 8.26C0.286114 8.44199 0.247314 8.63704 0.247314 8.83403C0.247314 9.03101 0.286114 9.22607 0.361497 9.40806C0.43688 9.59005 0.547371 9.75541 0.686661 9.89469L1.46799 10.6754C1.80799 11.016 2.28599 10.9554 2.57466 10.7834C2.7339 10.6888 2.92009 10.65 3.10384 10.673C3.28759 10.6961 3.45843 10.7797 3.58938 10.9106C3.72033 11.0416 3.80393 11.2124 3.82698 11.3962C3.85003 11.5799 3.81121 11.7661 3.71666 11.9254C3.54533 12.214 3.48399 12.692 3.82466 13.032L4.60666 13.8134C4.74595 13.9526 4.91131 14.0631 5.0933 14.1385C5.27529 14.2139 5.47034 14.2527 5.66733 14.2527C5.86431 14.2527 6.05937 14.2139 6.24136 14.1385C6.42335 14.0631 6.58871 13.9526 6.72799 13.8134L13.3133 7.22803C13.4526 7.08874 13.5631 6.92338 13.6385 6.74139C13.7139 6.5594 13.7527 6.36435 13.7527 6.16736C13.7527 5.97038 13.7139 5.77532 13.6385 5.59333C13.5631 5.41134 13.4526 5.24598 13.3133 5.10669L12.5327 4.32536C12.1927 3.98536 11.714 4.04536 11.4253 4.21736C11.2661 4.31191 11.0799 4.35073 10.8961 4.32768C10.7124 4.30463 10.5416 4.22103 10.4106 4.09008C10.2797 3.95913 10.1961 3.78829 10.173 3.60454C10.15 3.42079 10.1888 3.2346 10.2833 3.07536C10.4553 2.78669 10.516 2.30869 10.1753 1.96869L9.39333 1.18669Z"
                                     fill="#10182C" />
                             </svg>
-                            <span class="text-[12px] leading-[15px] font-medium">Economy.</span>
+                            <span class="text-[12px] leading-[15px] font-medium mr-1">Economy.</span>
                             <RouterLink to="/" class="text-[12px] leading-[15px] font-medium underline">
                                 Flight details</RouterLink>
                         </div>
@@ -231,7 +234,7 @@ const selectCurrency = (c) => {
                                         <div class="flex flex-col mb-2 xs:mb-0">
                                             <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
                                             <div
-                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                                 <span class="mr-1">Select</span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     viewBox="0 0 16 16" fill="none">
@@ -244,12 +247,12 @@ const selectCurrency = (c) => {
                                         <div class="flex flex-col w-full mb-2 xs:mb-0">
                                             <span class="text-[14px] leading-[19px] font-medium mb-[12px]">First name</span>
                                             <input type="text" placeholder="As written on passport"
-                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                         </div>
                                         <div class="flex flex-col w-full">
                                             <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Last name</span>
                                             <input type="text" placeholder="As written on passport"
-                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                                class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                         </div>
                                         <button class="hidden xs:block">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -283,7 +286,7 @@ const selectCurrency = (c) => {
                                 <div class="flex flex-col">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Booked By</span>
                                     <div
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center ">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center  h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                         <span class="mr-1">Select passenger</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
@@ -299,7 +302,7 @@ const selectCurrency = (c) => {
                                 <div class="flex flex-col mb-3 xs:mb-0">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Title</span>
                                     <div
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center  h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                         <span class="mr-1">Select</span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                             fill="none">
@@ -312,12 +315,12 @@ const selectCurrency = (c) => {
                                 <div class="flex flex-col w-full mb-3 xs:mb-0">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">First name</span>
                                     <input type="text" placeholder="As written on passport"
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                 </div>
                                 <div class="flex flex-col w-full">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Last name</span>
                                     <input type="text" placeholder="As written on passport"
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                 </div>
                             </div>
                             <div class="mt-[24px] flex items-center gap-x-[12px] flex-wrap xs:flex-nowrap">
@@ -326,7 +329,7 @@ const selectCurrency = (c) => {
                                         Number</span>
                                     <div class="flex items-center w-full">
                                         <div
-                                            class="mr-[12px] px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            class="mr-2 px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                             <span class="mr-1">+234</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 viewBox="0 0 16 16" fill="none">
@@ -337,13 +340,13 @@ const selectCurrency = (c) => {
                                         </div>
 
                                         <input type="text" placeholder="xxx-xxxx-xxx"
-                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                     </div>
                                 </div>
                                 <div class="flex flex-col w-full">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Email address</span>
                                     <input type="text" placeholder="As written on passport"
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                 </div>
                             </div>
 
@@ -351,13 +354,13 @@ const selectCurrency = (c) => {
                                 <div class="flex flex-col w-full mb-3 xs:mb-0">
                                     <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Address Line 1</span>
                                     <input type="text" placeholder="Street, house number, landmark"
-                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                        class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                 </div>
                                 <div class="flex items-center gap-x-[12px] w-full">
                                     <div class="flex flex-col w-full">
                                         <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Country</span>
                                         <div
-                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center justify-between h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                             <span class="mr-1">Select</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 viewBox="0 0 16 16" fill="none">
@@ -370,7 +373,7 @@ const selectCurrency = (c) => {
                                     <div class="flex flex-col w-full">
                                         <span class="text-[14px] leading-[19px] font-medium mb-[12px]">State</span>
                                         <div
-                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center">
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl flex items-center justify-between h-[48px] text-[16px] leading-[19px] tracking-[1%]">
                                             <span class="mr-1">Select</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 viewBox="0 0 16 16" fill="none">
@@ -383,7 +386,7 @@ const selectCurrency = (c) => {
                                     <div class="flex flex-col w-full">
                                         <span class="text-[14px] leading-[19px] font-medium mb-[12px]">Postal code</span>
                                         <input type="text" placeholder="x-x-x-x-x-x"
-                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full">
+                                            class="px-[12px] py-[18px] border border-of-gray outline-none rounded-xl w-full h-[48px] text-[16px] leading-[19px] tracking-[1%]">
 
                                     </div>
 
@@ -392,7 +395,7 @@ const selectCurrency = (c) => {
                         </div>
                     </div>
                 </div>
-                <div class="mt-12 lg:mt-0 w-full lg:w-[480px]">
+                <div class="mt-12 xl:mt-0 w-full xl:max-w-[480px]">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Your booking</h3>
                     <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4">
                         <div class="text-[18px] leading-[19px] font-pp pb-2 border-b border-of-gray">
@@ -419,7 +422,7 @@ const selectCurrency = (c) => {
                                 <span class="ml-[6px] text-[16px] leading-[17px] font-semibold font-pp">Returning</span>
                                 <span class="ml-[6px] text-[16px] leading-[17px] font-pp">09/02/2024</span>
                             </div>
-                            <div class="mt-[100px]">
+                            <div class="mt-[26px]">
                                 <div class="flex items-center justify-between pt-[12px] border-t-2 border-of-gray">
                                     <span class="text-[16px] leading-[17px] font-pp">Travellers</span>
                                     <span class="text-[16px] leading-[17px] font-semibold font-pp">2 Adults</span>
@@ -427,26 +430,28 @@ const selectCurrency = (c) => {
                                 <div
                                     class="flex items-center justify-between pt-[12px] border-t-2 border-of-gray mt-[24px]">
                                     <span class="text-[16px] leading-[17px] font-pp">Baggage Per passenger</span>
-                                    <span class="text-[16px] leading-[17px] font-semibold font-pp">1x 20kg checkin
+                                    <span class="text-[16px] leading-[17px] font-semibold font-pp text-right">1x 20kg
+                                        checkin
                                         allowance</span>
                                 </div>
                                 <div
                                     class="flex items-center justify-between pt-[12px] border-t-2 border-of-gray mt-[24px]">
                                     <span class="text-[16px] leading-[17px] font-pp">Payment with : VISA
                                         Electron/Debit</span>
-                                    <span class="text-[16px] leading-[17px] font-semibold font-pp">£ 4.99</span>
+                                    <span class="text-[16px] leading-[17px] font-semibold font-pp text-right">₦2,500</span>
                                 </div>
                                 <div
                                     class="flex items-center justify-between pt-[12px] pb-[24px] border-y-2 border-of-gray mt-[24px]">
                                     <span class="text-[16px] leading-[17px] font-pp">Booking fee</span>
-                                    <span class="text-[16px] leading-[17px] font-semibold font-pp">£ 4.99</span>
+                                    <span
+                                        class="text-[16px] leading-[17px] font-semibold font-pp text-right text-of-blue">Free</span>
                                 </div>
                                 <div class="flex items-end mt-[12px]">
                                     <span class="text-[24px] leading-[25px] font-semibold font-pp mr-2">₦200,000</span>
                                     <span
                                         class="text-[18px] leading-[18px] line-through font-pp font-semibold text-of-dark/80">₦536,000</span>
                                 </div>
-                                <div class="flex items-center px-3 py-2 rounded-[20px] my-[12px] bg-[#D7E6FE80] w-full">
+                                <div class="flex items-center px-3 py-2 rounded-[12px] my-[12px] bg-[#D7E6FE80] w-full">
                                     <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

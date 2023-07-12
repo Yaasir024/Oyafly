@@ -60,7 +60,9 @@ const selectCurrency = (c) => {
             </div>
         </section>
         <nav class="px-[24px] py-[12px]  flex items-center justify-between bg-white rounded-[20px]">
-            <img src="/logo.svg" alt="" class="">
+            <RouterLink to="/">
+                <img src="/logo.svg" alt="" class="">
+            </RouterLink>
             <div class="flex items-center border-l border-[#DCDADA] pl-[20px]">
                 <ul class="hidden md:flex items-center mr-[20px]">
                     <li class="text-[16px] leading-[19px] mr-[20px]">

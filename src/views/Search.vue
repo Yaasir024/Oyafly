@@ -49,7 +49,7 @@ const bookFlight = () => {
             <Header />
             <Hero />
             <section class="flex flex-col xl:flex-row mt-[44px] mb-[80px]">
-                <div class="w-full 2xl:w-[350px] pl-[24px] pr-[28px] 2xl:shrink-0 mb-[40px] xl:mb-0">
+                <div class="w-full 2xl:w-[350px] pl-[24px] pr-[28px] pt-[15px] 2xl:shrink-0 mb-[40px] xl:mb-0">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Filter your results</h3>
                     <div class="flex flex-row xl:flex-col mt-[24px] xl:mt-0 flex-wrap">
 
@@ -340,7 +340,7 @@ const bookFlight = () => {
                                                 Dr Nnamdi Azikwe Airport</h3>
                                         </div>
                                     </div>
-                                    <div class="flex border-b-2 border-dashed border-of-main">
+                                    <div class="flex">
                                         <div
                                             class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Abuja</h3>
@@ -397,7 +397,7 @@ const bookFlight = () => {
                                                     d="M9.39333 1.18669C9.11205 0.905589 8.73066 0.747681 8.33299 0.747681C7.93533 0.747681 7.55394 0.905589 7.27266 1.18669L0.686661 7.77336C0.547371 7.91265 0.43688 8.07801 0.361497 8.26C0.286114 8.44199 0.247314 8.63704 0.247314 8.83403C0.247314 9.03101 0.286114 9.22607 0.361497 9.40806C0.43688 9.59005 0.547371 9.75541 0.686661 9.89469L1.46799 10.6754C1.80799 11.016 2.28599 10.9554 2.57466 10.7834C2.7339 10.6888 2.92009 10.65 3.10384 10.673C3.28759 10.6961 3.45843 10.7797 3.58938 10.9106C3.72033 11.0416 3.80393 11.2124 3.82698 11.3962C3.85003 11.5799 3.81121 11.7661 3.71666 11.9254C3.54533 12.214 3.48399 12.692 3.82466 13.032L4.60666 13.8134C4.74595 13.9526 4.91131 14.0631 5.0933 14.1385C5.27529 14.2139 5.47034 14.2527 5.66733 14.2527C5.86431 14.2527 6.05937 14.2139 6.24136 14.1385C6.42335 14.0631 6.58871 13.9526 6.72799 13.8134L13.3133 7.22803C13.4526 7.08874 13.5631 6.92338 13.6385 6.74139C13.7139 6.5594 13.7527 6.36435 13.7527 6.16736C13.7527 5.97038 13.7139 5.77532 13.6385 5.59333C13.5631 5.41134 13.4526 5.24598 13.3133 5.10669L12.5327 4.32536C12.1927 3.98536 11.714 4.04536 11.4253 4.21736C11.2661 4.31191 11.0799 4.35073 10.8961 4.32768C10.7124 4.30463 10.5416 4.22103 10.4106 4.09008C10.2797 3.95913 10.1961 3.78829 10.173 3.60454C10.15 3.42079 10.1888 3.2346 10.2833 3.07536C10.4553 2.78669 10.516 2.30869 10.1753 1.96869L9.39333 1.18669Z"
                                                     fill="#10182C" />
                                             </svg>
-                                            <span class="text-[12px] leading-[15px] font-medium">Economy.</span>
+                                            <span class="text-[12px] leading-[15px] font-medium mr-1">Economy.</span>
                                             <RouterLink to="/" class="text-[12px] leading-[15px] font-medium underline">
                                                 Flight details</RouterLink>
                                         </div>
@@ -414,14 +414,14 @@ const bookFlight = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="px-[16px] pt-[16px]">
+                                    <div class="px-[16px] pt-[23px]">
                                         <div class="flex items-end mb-[22px]">
                                             <span class="text-[20px] leading-[21px] font-pp mr-2">₦200,000</span>
                                             <span
                                                 class="text-[16px] leading-[16px] line-through font-pp font-semibold">₦536,000</span>
                                         </div>
                                         <button @click="bookFlight"
-                                            class="rounded-xl p-2 bg-of-blue flex items-center justify-center w-full">
+                                            class="rounded-xl p-2 bg-of-blue flex items-center justify-center w-full max-w-[240px] mx-auto h-[40px]">
                                             <span class="text-[14px] leading-normal font-semibold text-white">Book
                                                 flight</span>
                                             <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
