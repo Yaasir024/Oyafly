@@ -1,11 +1,23 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, shallowRef, h } from 'vue';
 import { useRouter } from 'vue-router';
+
+import { ElDatePicker } from 'element-plus'
+import 'element-plus/dist/index.css'
 
 import axios from 'axios';
 import { useClickOutside } from "@/composables/useClickOutside";
 
 const router = useRouter()
+
+const value1 = ref('')
+
+const customPrefix = shallowRef({
+    render() {
+        return h('p', 'pre')
+    },
+})
+
 
 let flightClasses = ["first class", "business", "economy"]
 
@@ -317,9 +329,10 @@ const search = () => {
                             Going ⎯ Return Date
                         </div> -->
                         <!--  opacity-0 -->
-                        <input type="date" placeholder="Going ⎯ Return Date"
+                        <el-date-picker v-model="value1" type="date" placeholder="Take-off ⎯ Return Date" :prefix-icon="customPrefix" />
+                        <!-- <input type="date" placeholder="Going ⎯ Return Date"
                             class="placeholder:text-of-dark text-base xl:text-lg leading-[22px] w-full outline-none bg-transparent"
-                            ref="datePicker">
+                            ref="datePicker"> -->
                     </div>
                 </div>
             </div>
@@ -345,4 +358,7 @@ const search = () => {
 .menu-leave-to {
     transform: scale(0);
 }
+
+
 </style>
+

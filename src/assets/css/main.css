@@ -11,3 +11,42 @@
 .menu-leave-to {
     transform: scale(0);
 }
+
+.el-input__prefix {
+    display: none !important;
+}
+.el-date-editor {
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+.el-input__wrapper {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none;
+}
+.el-input__wrapper:hover {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+.el-input__wrapper.is-focus {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.el-input__inner {
+    color: #10182C !important;
+    font-size: 16px !important;
+    line-height: 18px !important;
+}
+.el-input__inner::placeholder {
+    color: #10182C !important;
+    font-size: 16px !important;
+    line-height: 18px !important;
+}
