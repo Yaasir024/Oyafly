@@ -120,7 +120,7 @@ const search = () => {
     <div class="bg-white rounded-[20px] p-[6px] mt-2 flex flex-col xl:flex-row">
         <div
             class="flex flex-full xl:flex-75% flex-col md:flex-row md:items-center border-2 border-[#D7E6FE] bg-[#F3F7FF] rounded-[14px]">
-            <div class="h-[84px] flex items-center px-[12px] xl:px-[19px]  flex-1 border-b md:border-r border-[#D7E6FE] relative"
+            <div class="h-[84px] flex items-center px-[12px] xl:px-[19px]  flex-1  relative"
                 ref="fromMenu">
                 <div class="flex items-center" @click="showFromMenu = !showFromMenu">
                     <svg class="mr-[12px]" width="20" height="17" viewBox="0 0 20 17" fill="none"
