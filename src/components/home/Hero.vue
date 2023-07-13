@@ -124,7 +124,7 @@ const reduceInfant = () => {
                     </div>
                 </div>
             </div>
-            <div class=" hidden xl:hidden absolute right-[-100px] top-0 bottom-0">
+            <div class=" hidden xl:flex absolute right-[-100px] top-0 bottom-0">
                 <div class="w-[300px] h-full bg-blue-500 clip-paralel mr-6">
                     <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full max-w-[700px] cloud-img ">
 
