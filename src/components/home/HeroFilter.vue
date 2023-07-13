@@ -208,7 +208,7 @@ const search = () => {
                 </transition>
             </div>
             <div class="h-[75px] md:h-[84px] flex items-center px-[12px] xl:px-[19px]  xl:flex-1">
-                <div class="hidden sm:flex items-center">
+                <div class="flex items-center">
                     <svg class="mr-[12px]" width="19" height="18" viewBox="0 0 19 18" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path

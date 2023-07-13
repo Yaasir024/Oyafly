@@ -38,7 +38,7 @@ const reduceInfant = () => {
 
 <template>
     <section class="mt-[10px] ">
-        <section class="pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px]">
+        <section class="relative pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px] overflow-x-hidden">
             <div class="flex justify-between lg:overflow-x-hidden">
                 <div class="">
                     <h1
@@ -124,14 +124,40 @@ const reduceInfant = () => {
                     </div>
                 </div>
             </div>
+            <div class=" hidden xl:hidden absolute right-[-100px] top-0 bottom-0">
+                <div class="w-[300px] h-full bg-blue-500 clip-paralel mr-6">
+                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full max-w-[700px] cloud-img ">
+
+                </div>
+                <div class="w-[300px] h-full bg-blue-500 clip-paralel">
+                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full max-w-[700px] cloud-img ">
+                </div>
+            </div>
         </section>
         <HeroFilter />
-        
+
 
     </section>
 </template>
 
 <style scoped>
+.clip-paralel {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.cloud-img {
+  animation: scrollAnimation 10s linear infinite;
+}
+
+@keyframes scrollAnimation {
+    0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150px);
+  }
+}
+
 /* Menu Animation */
 .menu-enter-active,
 .menu-leave-active {
@@ -143,7 +169,5 @@ const reduceInfant = () => {
 .menu-leave-to {
     transform: scale(0);
 }
-
-
 </style>
 

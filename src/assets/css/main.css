@@ -53,3 +53,20 @@
     font-size: 16px !important;
     line-height: 18px !important;
 }
+
+@media only screen and (max-width: 650px) {
+    .el-date-range-picker {
+        max-width: 400px !important;
+        width: 100% !important;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .el-date-range-picker__content  {
+        width: 100% !important;
+    }
+    .el-date-range-picker .el-picker-panel__body {
+        min-width: 100px !important;
+    }
+
+}
