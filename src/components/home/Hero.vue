@@ -38,7 +38,7 @@ const reduceInfant = () => {
 
 <template>
     <section class="mt-[10px] ">
-        <section class="relative pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px] overflow-x-hidden">
+        <section class="relative pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px] overflow-hidden">
             <div class="flex justify-between lg:overflow-x-hidden">
                 <div class="">
                     <h1
@@ -125,12 +125,12 @@ const reduceInfant = () => {
                 </div>
             </div>
             <div class=" hidden xl:flex absolute right-[-100px] top-0 bottom-0">
-                <div class="w-[300px] h-full bg-blue-500 clip-paralel mr-6">
-                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full max-w-[700px] cloud-img ">
+                <div class="w-[300px] h-full bg-white clip-paralel mr-6">
+                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img ">
 
                 </div>
-                <div class="w-[300px] h-full bg-blue-500 clip-paralel">
-                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full max-w-[700px] cloud-img ">
+                <div class="w-[300px] h-full bg-white clip-paralel">
+                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
                 </div>
             </div>
         </section>
@@ -146,7 +146,7 @@ const reduceInfant = () => {
 }
 
 .cloud-img {
-  animation: scrollAnimation 10s linear infinite;
+  animation: zoomAnimation 90s linear infinite;
 }
 
 @keyframes scrollAnimation {
@@ -155,6 +155,14 @@ const reduceInfant = () => {
   }
   100% {
     transform: translateX(-150px);
+  }
+}
+@keyframes zoomAnimation {
+    0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
   }
 }
 
