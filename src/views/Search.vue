@@ -3,7 +3,7 @@ import { ref } from "vue"
 import Header from '@/components/navigation/Header.vue';
 import Hero from '@/components/home/Hero.vue';
 import Perks from '@/components/home/Perks.vue';
-import Cta from '@/components/Cta.vue';
+import ManageBooking from '@/components/global/ManageBooking.vue';
 import Footer from '@/components/navigation/Footer.vue';
 
 import { useClickOutside } from "@/composables/useClickOutside";
@@ -439,7 +439,7 @@ const bookFlight = () => {
                 </div>
             </section>
             <Perks />
-            <Cta />
+            <ManageBooking />
             <Footer />
         </div>
     </main>

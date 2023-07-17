@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 
 import Perks from '@/components/home/Perks.vue';
-import Cta from '@/components/Cta.vue';
+import ManageBooking from '@/components/global/ManageBooking.vue';
 import Footer from '@/components/navigation/Footer.vue';
 
 import { useClickOutside } from "@/composables/useClickOutside";
@@ -511,7 +511,7 @@ const selectTitle = (t) => {
             </section>
 
             <Perks />
-            <Cta />
+            <ManageBooking />
             <Footer />
         </div>
     </main>

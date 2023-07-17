@@ -176,11 +176,11 @@ const checkout = () => {
         <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
             <div class="" v-for="flight in flights" :key="flight.id">
                 <RouterLink to="/flight">
-                    <div class="w-[300px] xs:w-[320px] border border-[#D7E6FE] p-4 rounded-lg cursor-pointer" >
+                    <div class="w-[300px] xs:w-[320px] border border-[#D7E6FE] p-4 rounded-lg cursor-pointer">
                         <div class="flex items-center justify-between pb-[8px] border-b border-of-gray">
                             <h3 class="text-[18px] leading-[19px] font-pp">
                                 {{ flight.airline }}
-    
+
                             </h3>
                             <img :src="flight.img" alt="" class="h-[27px] w-[27px] border rounded-[3px] overflow-hidden">
                         </div>
@@ -236,8 +236,8 @@ const checkout = () => {
                         <div class="mt-[95px]">
                             <div class="flex items-center px-3 py-2 rounded-[20px] mb-[12px]"
                                 :style="{ backgroundColor: flight.addInfo.color }">
-                                <svg v-if="flight.addInfo.type == 'info'" width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg v-if="flight.addInfo.type == 'info'" width="14" height="15" viewBox="0 0 14 15"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M7.00004 0.832031C10.6827 0.832031 13.668 3.81736 13.668 7.50003C13.668 11.182 10.6827 14.1667 7.00004 14.1667C3.31737 14.1674 0.333374 11.182 0.333374 7.50003C0.332707 3.81736 3.31737 0.832031 7.00004 0.832031ZM6.99737 6.33203C6.834 6.33225 6.67639 6.39246 6.55447 6.50123C6.43256 6.60999 6.35483 6.75974 6.33604 6.92203L6.33137 6.99936L6.33404 10.6674L6.33804 10.7447C6.35667 10.9073 6.43447 11.0574 6.55661 11.1663C6.67875 11.2753 6.8367 11.3355 7.00037 11.3355C7.16404 11.3355 7.322 11.2753 7.44414 11.1663C7.56628 11.0574 7.64408 10.9073 7.66271 10.7447L7.66671 10.6667L7.66404 6.9987L7.65937 6.9207C7.6401 6.75854 7.56199 6.60909 7.43984 6.5007C7.31769 6.39232 7.16001 6.33254 6.99671 6.3327L6.99737 6.33203ZM7.00071 3.8327C6.77943 3.8327 6.56721 3.9206 6.41074 4.07707C6.25428 4.23354 6.16637 4.44575 6.16637 4.66703C6.16637 4.88831 6.25428 5.10053 6.41074 5.25699C6.56721 5.41346 6.77943 5.50136 7.00071 5.50136C7.11023 5.50132 7.21867 5.47971 7.31984 5.43775C7.42101 5.3958 7.51292 5.33433 7.59034 5.25686C7.66775 5.17938 7.72915 5.08742 7.77102 4.98621C7.81289 4.88501 7.83442 4.77655 7.83437 4.66703C7.83433 4.55751 7.81272 4.44907 7.77076 4.3479C7.72881 4.24673 7.66734 4.15481 7.58987 4.0774C7.51239 3.99999 7.42043 3.93859 7.31922 3.89672C7.21802 3.85485 7.10956 3.83332 7.00004 3.83336L7.00071 3.8327Z"
                                         fill="#10182C" />
@@ -254,7 +254,8 @@ const checkout = () => {
                             </div>
                             <div class="border-t border-of-gray pt-[16px] flex items-end">
                                 <span class="text-[20px] leading-[21px] font-pp mr-2">{{ flight.price.full }}</span>
-                                <span class="text-[16px] leading-[16px] line-through font-pp font-semibold">{{ flight.price.sale
+                                <span class="text-[16px] leading-[16px] line-through font-pp font-semibold">{{
+                                    flight.price.sale
                                 }}</span>
                             </div>
                         </div>
@@ -266,11 +267,11 @@ const checkout = () => {
         <div class="mt-[24px] px-[24px] pb-[24px] ">
             <div class="border-t border-[#D7E6FE] pt-[30px] flex items-center justify-end">
                 <div class="flex items-center">
-                    <h4 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp">discover more flights</h4>
-                    <svg class="ml-[16px]" width="52" height="38" viewBox="0 0 52 38" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <h4 class="text-[18px] sm:text-[20px] leading-[21px] font-semibold font-pp mr-2">discover more
+                        flights</h4>
+                    <svg width="46" height="38" viewBox="0 0 46 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M7.91 14.91C7.91 14.91 7.92 14.97 7.93 15L13.96 37.5H52L45.97 15C43.75 6.72 35.23 0 26.95 0H18.91C10.66 0 5.75 6.67 7.91 14.91Z"
+                            d="M45.4909 14.91C45.4909 14.91 45.4809 14.97 45.4709 15L39.4409 37.5H1.40088L7.43088 15C9.65088 6.72 18.1709 0 26.4509 0H34.4909C42.7409 0 47.6509 6.67 45.4909 14.91Z"
                             fill="#00D1FF" />
                         <path
                             d="M13.267 11.209C13.122 11.0778 12.9314 11.0084 12.7359 11.0157C12.5404 11.0229 12.3555 11.1063 12.2206 11.248C12.0857 11.3896 12.0115 11.5784 12.0138 11.774C12.0161 11.9696 12.0948 12.1566 12.233 12.295L18.484 18.25H3.75C3.55109 18.25 3.36032 18.329 3.21967 18.4697C3.07902 18.6103 3 18.8011 3 19C3 19.1989 3.07902 19.3897 3.21967 19.5303C3.36032 19.671 3.55109 19.75 3.75 19.75H18.484L12.233 25.704C12.0889 25.8411 12.0051 26.0299 12.0001 26.2288C11.9951 26.4277 12.0694 26.6204 12.2065 26.7645C12.3436 26.9087 12.5324 26.9924 12.7313 26.9974C12.9301 27.0024 13.1229 26.9281 13.267 26.791L20.687 19.724C20.8493 19.5699 20.955 19.3656 20.987 19.144C21.0053 19.0482 21.005 18.9497 20.986 18.854C20.9537 18.6332 20.848 18.4296 20.686 18.276L13.267 11.209Z"
@@ -289,5 +290,4 @@ const checkout = () => {
 
 .carousel {
     box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
-}
-</style>
+}</style>
