@@ -46,7 +46,7 @@ const reduceInfant = () => {
                         Going
                         somewhere?
                     </h1>
-                    <p class="mt-[12px] text-[18px] sm:text-[24px] leading-[22px] sm:leading-[36px] max-w-[490px]">
+                    <p class="mt-[12px] text-[18px] sm:text-[24px] leading-[22px] sm:leading-[36px] max-w-[490px] text-of-dark/60">
                         Create unforgettable travel experiences all the way there and back, with ease.
                     </p>
 

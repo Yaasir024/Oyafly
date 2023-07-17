@@ -37,17 +37,17 @@
                                     Plan your trip
                                 </h3>
                             </li>
-                            <li class="text-[16px] leading-[32px]">
+                            <li class="text-[16px] leading-[32px] text-of-dark/80">
                                 <RouterLink to="/">
                                     Manage bookings
                                 </RouterLink>
                             </li>
-                            <li class="text-[16px] leading-[32px]">
+                            <li class="text-[16px] leading-[32px] text-of-dark/80">
                                 <RouterLink to="/">
                                     Explore destinations
                                 </RouterLink>
                             </li>
-                            <li class="text-[16px] leading-[32px]">
+                            <li class="text-[16px] leading-[32px] text-of-dark/80">
                                 <RouterLink to="/">
                                     Contact helpdesk
                                 </RouterLink>
@@ -59,12 +59,12 @@
                                     Go with Oyafly
                                 </h3>
                             </li>
-                            <li class="text-[16px] leading-[32px]">
+                            <li class="text-[16px] leading-[32px] text-of-dark/80">
                                 <RouterLink to="/">
                                     About us
                                 </RouterLink>
                             </li>
-                            <li class="text-[16px] leading-[32px]">
+                            <li class="text-[16px] leading-[32px] text-of-dark/80">
                                 <RouterLink to="/">
                                     Careers
                                 </RouterLink>
