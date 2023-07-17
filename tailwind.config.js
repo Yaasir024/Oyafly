@@ -10,6 +10,7 @@ module.exports = {
       'pp': ['PPMori'],
     },
     screens: {
+      '2xs': '500px',
       xs: '600px',
       sm: '640px',
       // => @media (min-width: 640px) { ... }

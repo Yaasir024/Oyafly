@@ -20,3 +20,10 @@
         </div>
       </div>
 </template>
+
+<style scoped>
+img {
+  opacity: 0.69999998;
+  mix-blend-mode: luminosity;
+}
+</style>

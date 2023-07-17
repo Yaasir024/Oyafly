@@ -4,7 +4,7 @@
             <h1 class="text-[36px] sm:text-[48px] leading-[32px] sm:leading-[46px] font-pp font-semibold">
                 We’ve got you covered
             </h1>
-            <p class="text-[18px] sm:text-[24px] leading-[24px] sm:leading-[36px] max-w-[530px] mt-[12px] text-of-dark/60">
+            <p class="text-[18px] sm:text-[24px] leading-[24px] sm:leading-[36px] max-w-[530px] mt-[12px] text-white/80">
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
