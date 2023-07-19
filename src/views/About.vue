@@ -3,7 +3,8 @@ import Header from '@/components/navigation/Header.vue';
 import Hero from '@/components/about/Hero.vue';
 import AirlinesIcon from '@/components/global/AirlinesIcon.vue';
 import AboutUs from '@/components/about/Us.vue';
-import Team from '@/components/about/Team.vue';
+import Values from '@/components/about/Values.vue';
+// import Team from '@/components/about/Team.vue';
 import TopDeals from '@/components/home/TopDeals.vue';
 import Feedback from '@/components/about/Feedback.vue';
 import Perks from '@/components/home/Perks.vue';
@@ -18,7 +19,8 @@ import Footer from '@/components/navigation/Footer.vue';
       <Hero />
       <AboutUs />
       <AirlinesIcon />
-      <Team />
+      <Values />
+      <!-- <Team /> -->
       <TopDeals />
       <Feedback />
       <Perks />

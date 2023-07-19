@@ -1,7 +1,7 @@
 <template>
     <section class="mt-2 p-[24px] bg-white rounded-[20px] flex flex-wrap">
         <div class="flex-full lg:flex-50% order-2 lg:order-1">
-            <img src="@/assets/images/about/hero/about-2.png" alt="" class="">
+            <img src="@/assets/images/about/hero/us.png" alt="" class="">
         </div>
         <div class="flex-full lg:flex-50% lg:pl-[40px] xl:pl-[88px] pt-[40px] order-1 lg:order-2">
             <div class="pb-[32px] border-b-2 border-[#D7E6FE] border-dashed">
