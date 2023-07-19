@@ -118,7 +118,10 @@ const selectTitle = (t) => {
             <section class="flex mt-[40px] mb-[180px] flex-col xl:flex-row">
                 <div class="pr-2 w-full">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp mb-[12px]">Your flight</h3>
-                    <div class="bg-white rounded-[20px] border border-of-gray p-4 mb-[12px]">
+                    <div class="bg-white rounded-[20px] border border-of-gray px-4 pt-[20px] pb-[40px] mb-[12px]">
+                        <div class="mb-[30px]">
+                            <h3 class="text-[18px] tracking-[0.36px] font-pp pb-[16px] border-b-2 border-b-of-main">Flight summary</h3>
+                        </div>
                         <div class="">
                             <div
                                 class="flex items-center justify-between pb-[14px] border-b-2 border-dashed border-of-main pr-4">
@@ -429,7 +432,7 @@ const selectTitle = (t) => {
                 </div>
                 <div class="mt-12 xl:mt-0 w-full xl:max-w-[480px]">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Your booking</h3>
-                    <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4">
+                    <div class="mt-[12px] w-full rounded-[20px] bg-white border border-[#D7E6FE] p-4 pt-5">
                         <div class="text-[18px] leading-[19px] font-pp pb-2 border-b border-of-gray">
                             Pay for trip
                         </div>
