@@ -58,6 +58,6 @@
             </p>
 
         </div>
-        <img src="@/assets/images/nav/footer-pattern.svg" alt="" class="">
+        <img src="@/assets/images/about/feedback/pattern.svg" alt="" class="">
     </section>
 </template>
