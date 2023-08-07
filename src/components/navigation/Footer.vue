@@ -60,13 +60,13 @@
                                 </h3>
                             </li>
                             <li class="text-[16px] leading-[32px] text-of-dark/80">
-                                <RouterLink to="/">
+                                <RouterLink to="/about">
                                     About us
                                 </RouterLink>
                             </li>
                             <li class="text-[16px] leading-[32px] text-of-dark/80">
-                                <RouterLink to="/">
-                                    Careers
+                                <RouterLink to="/contact-us">
+                                    Contact Us
                                 </RouterLink>
                             </li>
                         </ul>

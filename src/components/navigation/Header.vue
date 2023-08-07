@@ -66,10 +66,13 @@ const selectCurrency = (c) => {
             <div class="flex items-center border-l border-[#DCDADA] pl-[20px]">
                 <ul class="hidden md:flex items-center mr-[20px]">
                     <li class="text-[16px] leading-[19px] mr-[20px]">
+                        <RouterLink to="/about">About Us</RouterLink>
+                    </li>
+                    <li class="text-[16px] leading-[19px] mr-[20px]">
                         <RouterLink to="/">Blog</RouterLink>
                     </li>
-                    <li class="text-[16px] leading-[19px]">
-                        <RouterLink to="/">Careers</RouterLink>
+                    <li class="text-[16px] leading-[19px] mr-[20px]">
+                        <RouterLink to="/contact-us">Contact Us</RouterLink>
                     </li>
                 </ul>
                 <div class="text-[16px] leading-[19px] font-semibold mr-[20px] hidden md:block">
