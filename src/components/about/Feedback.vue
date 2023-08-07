@@ -1,5 +1,6 @@
 <template>
-    <section class="mt-[10px] 2xs:px-[24px] pt-[24px] bg-[#D7E6FE] rounded-[20px]">
+    <section class="mt-[10px] 2xs:px-[24px] pt-[24px] bg-[#D7E6FE] rounded-[20px] relative">
+        <img src="@/assets/images/about/feedback/hand-ticket.png" alt="" class="absolute right-[-20px] hidden lg:block lg:top-[-150px]">
         <div class="flex flex-wrap">
             <div class="lg:flex-33.33% lg:pr-[16px]">
                 <div
@@ -48,7 +49,8 @@
             </div>
         </div>
         <div class="mt-[40px] mb-[80px]">
-            <h1 class="text-[34px] 2xs:text-[40px] xs:text-[52px] sm:text-[48px] leading-[46px] font-semibold font-pp max-w-[485px] tracking-[-0.96px]">
+            <h1
+                class="text-[34px] 2xs:text-[40px] xs:text-[52px] sm:text-[48px] leading-[46px] font-semibold font-pp max-w-[485px] tracking-[-0.96px]">
                 Cheers from our users
             </h1>
             <p
