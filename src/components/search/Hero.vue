@@ -53,7 +53,7 @@ const reduceInfant = () => {
                 </div>
                 <img src="@/assets/images/home/hero-cloud.svg" alt="" class="mt-[45px] hidden">
             </div>
-            <div class="mt-[230px]">
+            <div class="mt-[60px]">
                 <div class="flex sm:items-center flex-col sm:flex-row">
                     <div class="flex items-center mb-4 sm:mb-0  flex-wrap gap-y-1">
                         <button
@@ -124,21 +124,12 @@ const reduceInfant = () => {
                     </div>
                 </div>
             </div>
-            <div v-if="false" class=" hidden xl:flex absolute right-[-100px] top-0 bottom-0">
+            <div class=" hidden xl:flex absolute right-[-100px] top-0 bottom-0">
                 <div class="w-[300px] h-full bg-white clip-paralel mr-6">
                     <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img ">
 
                 </div>
                 <div class="w-[300px] h-full bg-white clip-paralel">
-                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
-                </div>
-            </div>
-            <div class=" hidden xl:flex absolute right-[10px] top-[86px] bottom-0 rotate-6">
-                <div class="w-[210px] h-[460px] rounded-[89px] overflow-hidden bg-white clip-paralel mr-6">
-                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img ">
-
-                </div>
-                <div class="w-[210px] h-[460px] rounded-[89px] overflow-hidden bg-white clip-paralel">
                     <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
                 </div>
             </div>
@@ -151,7 +142,7 @@ const reduceInfant = () => {
 
 <style scoped>
 .clip-paralel {
-    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .cloud-img {

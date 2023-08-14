@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import Header from '@/components/navigation/Header.vue';
-import Hero from '@/components/home/Hero.vue';
+import Hero from '@/components/search/Hero.vue';
 import Perks from '@/components/home/Perks.vue';
 import ManageBooking from '@/components/global/ManageBooking.vue';
 import Footer from '@/components/navigation/Footer.vue';
