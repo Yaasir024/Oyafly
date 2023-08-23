@@ -9,8 +9,8 @@
                 Nurturing a culture of excellence, transparency, and customer-centricity to redefine the travel experience.
             </p>
         </div>
-        <div class="mt-[72px] flex flex-wrap pb-[32px] border-b-2 border-dashed border-[#D7E6FE] gap-y-[20px]">
-            <div class="md:flex-50% xl:flex-25% pr-1">
+        <div class="mt-[72px] flex flex-wrap pb-[32px] border-b-2 border-dashed border-[#D7E6FE] gap-y-[20px] xl:items-stretch">
+            <div class="md:flex-50% xl:flex-25% pr-1 xl:h-full">
                 <div class="card-one bg-[#00EA8A] p-3 rounded-[14px]">
                     <div class="h-[240px] w-full"></div>
                     <div class="pt-[16px] px-[12px] pb-[24px] bg-white rounded-md">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <div class="md:flex-50% xl:flex-25% pr-1">
+            <div class="md:flex-50% xl:flex-25% pr-1 xl:h-full">
                 <div class="card-two bg-[#00D1FF] p-3 rounded-[14px]">
                     <div class="h-[240px] w-full"></div>
                     <div class="pt-[16px] px-[12px] pb-[24px] bg-white rounded-md">
@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="md:flex-50% xl:flex-25% pr-1">
+            <div class="md:flex-50% xl:flex-25% pr-1 xl:h-full">
                 <div class="card-three bg-[#F3E909] p-3 rounded-[14px]">
                     <div class="h-[240px] w-full"></div>
                     <div class="pt-[16px] px-[12px] pb-[24px] bg-white rounded-md">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="md:flex-50% xl:flex-25% pr-1">
+            <div class="md:flex-50% xl:flex-25% pr-1 xl:h-full">
                 <div class="card-four bg-[#D492FF] p-3 rounded-[14px]">
                     <div class="h-[240px] w-full"></div>
                     <div class="pt-[16px] px-[12px] pb-[24px] bg-white rounded-md">

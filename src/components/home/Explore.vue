@@ -103,39 +103,6 @@ const modules = [Autoplay, Pagination, Navigation]
                 </swiper-slide>
             </swiper>
         </div>
-        <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
-
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
-            </div>
-            <div class="shrink-0 w-[240px]">
-                <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
-            </div>
-        </div>
         <div class="mt-[24px] px-[24px] pb-[24px] ">
             <div class="border-t border-[#D7E6FE] pt-[30px] flex items-center justify-end">
                 <div class="flex items-center">

@@ -42,7 +42,7 @@ const reduceInfant = () => {
             <div class="flex justify-between lg:overflow-x-hidden">
                 <div class="">
                     <h1
-                        class="text-[52px] sm:text-[68px] md:text-[96px] leading-[48px] sm:leading-[62px] md:leading-[92px] font-semibold font-pp max-w-[540px]">
+                        class="text-[52px] md:text-[72px] leading-[48px] md:leading-[68px] font-semibold font-pp max-w-[615px] tracking-[-2.88px]">
                         Going
                         somewhere?
                     </h1>
@@ -124,27 +124,10 @@ const reduceInfant = () => {
                     </div>
                 </div>
             </div>
-            <div class="hidden xl:flex absolute right-[-35px] top-[-15px] bottom-[-95px] max-w-[600px]">
+            <div class="hidden xl:flex absolute right-[-55px] top-[-80px] bottom-[-120px] max-w-[600px]">
                 <div class="masker h-full relative">
                     <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img top-0 left-0 right-0 bottom-0">
                 </div>
-            </div>
-            <div class=" hidden absolute right-0 top-[-95px] bottom-[-95px] overflow-hidden">
-                <svg width="563" height="900" viewBox="0 0 563 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M289.97 85.8C290.027 85.6284 290.085 85.2852 290.085 85.2852C302.453 38.1524 274.337 0 227.096 0H181.057C133.644 0 84.8559 38.4384 72.1437 85.8L2.68427 344.687C2.62701 344.802 2.62701 344.859 2.62701 344.916C-8.99728 391.534 19.0041 429 65.902 429H114.174C160.156 427.856 206.825 391.076 220.224 345.488C220.396 344.744 220.625 344.001 220.854 343.257L289.97 85.8Z"
-                        fill="#00D1FF" />
-                    <path
-                        d="M559.97 85.8C560.027 85.6284 560.085 85.2852 560.085 85.2852C572.453 38.1524 544.338 0 497.096 0H451.057C403.644 0 354.856 38.4384 342.144 85.8L272.684 344.687C272.627 344.802 272.627 344.859 272.627 344.916C261.003 391.534 289.004 429 335.902 429H384.174C430.156 427.856 476.825 391.076 490.224 345.488C490.396 344.744 490.625 344.001 490.854 343.257L559.97 85.8Z"
-                        fill="#00D1FF" />
-                </svg>
-                <!-- <div class="w-[300px] h-full bg-white clip-paralel mr-6">
-                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img ">
-
-                </div>
-                <div class="w-[300px] h-full bg-white clip-paralel">
-                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
-                </div> -->
             </div>
         </section>
         <HeroFilter />
