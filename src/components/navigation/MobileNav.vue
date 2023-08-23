@@ -24,9 +24,6 @@ const closeOnRoute = () => {
                     <RouterLink to="/about" class="w-full text-center" @click="closeOnRoute">About Us</RouterLink>
                 </li>
                 <li class="flex items-center justify-center text-[20px] leading-[19px] py-4 border-b">
-                    <RouterLink to="/" class="w-full text-center" @click="closeOnRoute">Blog</RouterLink>
-                </li>
-                <li class="flex items-center justify-center text-[20px] leading-[19px] py-4 border-b">
                     <RouterLink to="/contact-us" class="w-full text-center" @click="closeOnRoute">Contact</RouterLink>
                 </li>
             </ul>

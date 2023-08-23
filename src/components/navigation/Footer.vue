@@ -47,11 +47,6 @@
                                     Explore destinations
                                 </RouterLink>
                             </li>
-                            <li class="text-[16px] leading-[32px] text-of-dark/80">
-                                <RouterLink to="/">
-                                    Contact helpdesk
-                                </RouterLink>
-                            </li>
                         </ul>
                         <ul class="">
                             <li class="">

@@ -1,3 +1,23 @@
+<script setup>
+import { ref, computed } from 'vue'
+// Import Swiper Vue.js components
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue'
+
+// Import Swiper styles
+import 'swiper/css'
+// import 'swiper/css/autoplay'
+
+
+let swipfunc = null
+const onSwiper = (swiper) => {
+    swipfunc = swiper
+}
+const onSlideChange = () => { }
+
+const modules = [Autoplay, Pagination, Navigation]
+</script>
+
 <template>
     <section class="mt-2 bg-white rounded-[20px] pt-[40px]">
         <div class="px-[24px]">
@@ -8,7 +28,83 @@
                 Whether it’s your first flight or simply your latest, we work to anticipate your every need
             </p>
         </div>
+        <div class="mt-[70px] px-[24px]">
+            <swiper :space-between="16" :autoplay="{
+                delay: 2500,
+                disableOnInteraction: true,
+            }" :breakpoints="{
+    200: {
+        slidesPerView: 1.4,
+    },
+    480: {
+        slidesPerView: 2,
+    },
+    580: {
+        slidesPerView: 2.8,
+    },
+    650: {
+        slidesPerView: 3,
+    },
+    800: {
+        slidesPerView: 4,
+    },
+    // when window width is >= 640px
+    1000: {
+        slidesPerView: 5,
+    },
+    1240: {
+        slidesPerView: 5.6,
+    }
+}" :modules="modules" class="mySwiper">
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/abuja.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/asaba.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/akure.png" alt="" class="w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="@/assets/images/home/locations/kano.png" alt="" class="w-full">
+                </swiper-slide>
+            </swiper>
+        </div>
         <div class="carousel mt-[70px] px-[24px] flex gap-x-[16px] overflow-x-auto">
+
             <div class="shrink-0 w-[240px]">
                 <img src="@/assets/images/home/locations/lagos.png" alt="" class="w-full">
             </div>
@@ -66,4 +162,5 @@
 
 .carousel {
     box-shadow: -10px 0 10px -5px rgba(225, 225, 225, 0.5) inset;
-}</style>
+}
+</style>

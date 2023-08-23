@@ -46,16 +46,17 @@ const reduceInfant = () => {
                         Going
                         somewhere?
                     </h1>
-                    <p class="mt-[12px] text-[18px] sm:text-[24px] leading-[22px] sm:leading-[36px] max-w-[490px] text-of-dark/60">
+                    <p
+                        class="mt-[12px] text-[18px] sm:text-[24px] leading-[22px] sm:leading-[36px] max-w-[490px] text-of-dark/60">
                         Create unforgettable travel experiences all the way there and back, with ease.
                     </p>
 
                 </div>
                 <img src="@/assets/images/home/hero-cloud.svg" alt="" class="mt-[45px] hidden">
             </div>
-            <div class="mt-[230px]">
-                <div class="flex sm:items-center flex-col sm:flex-row">
-                    <div class="flex items-center mb-4 sm:mb-0  flex-wrap gap-y-1">
+            <div class="mt-[40px] xl:mt-[230px]">
+                <div class="flex md:items-center flex-col md:flex-row">
+                    <div class="flex items-center mb-4 md:mb-0  flex-wrap gap-y-1">
                         <button
                             class="px-[12px] py-[10px] border border-of-dark rounded-[40px] text-[16px] leading-[19px] font-semibold mr-[16px] transition-all duration-200 ease-in-out"
                             :class="flightData.type == 'one-way' ? 'bg-of-dark text-[#D7E6FE]' : ''"
@@ -133,13 +134,9 @@ const reduceInfant = () => {
                     <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
                 </div>
             </div>
-            <div class=" hidden xl:flex absolute right-[10px] top-[86px] bottom-0 rotate-6">
-                <div class="w-[210px] h-[460px] rounded-[89px] overflow-hidden bg-white clip-paralel mr-6">
-                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img ">
-
-                </div>
-                <div class="w-[210px] h-[460px] rounded-[89px] overflow-hidden bg-white clip-paralel">
-                    <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
+            <div class="hidden xl:flex absolute right-0 top-[86px] bottom-[86px] max-w-[600px]">
+                <div class="masker h-full relative">
+                    <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img top-0 left-0 right-0 bottom-0">
                 </div>
             </div>
         </section>
@@ -150,29 +147,41 @@ const reduceInfant = () => {
 </template>
 
 <style scoped>
+
+.masker {
+  -webkit-mask-image: url(../../assets/images/home/hero-cloud.svg);
+  mask-image: url(../../assets/images/home/hero-cloud.svg);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+}
 .clip-paralel {
     /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
 }
 
 .cloud-img {
-  animation: zoomAnimation 90s linear infinite;
+    animation: zoomAnimation 80s linear infinite;
 }
 
 @keyframes scrollAnimation {
     0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-150px);
-  }
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-150px);
+    }
 }
+
 @keyframes zoomAnimation {
     0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.5);
-  }
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
 }
 
 /* Menu Animation */
@@ -185,6 +194,5 @@ const reduceInfant = () => {
 .menu-enter-from,
 .menu-leave-to {
     transform: scale(0);
-}
-</style>
+}</style>
 

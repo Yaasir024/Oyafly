@@ -251,7 +251,7 @@ const search = () => {
         </div>
         <div class="flex-full xl:flex-25% mt-2 xl:mt-0 xl:pl-[6px]">
             <button @click="search"
-                class="bg-of-blue rounded-[14px] py-[18px] md:py-[24px] px-[12px] w-full text-white text-[20px] leading-[36px] font-semibold">Search
+                class="bg-of-blue rounded-[14px] py-[18px] md:py-[24px] px-[12px] w-full text-white text-[20px] leading-[36px] font-semibold md:h-full flex items-center justify-center">Search
             Flights</button>
     </div>
 </div></template>

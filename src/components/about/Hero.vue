@@ -24,10 +24,10 @@
                         </svg></button>
                 </div>
             </div>
-            <div class="pl-8 hidden xl:block">
+            <div class="hidden xl:block">
 
-                <div class="max-w-[450px] 2xl:max-w-[590px] rounded-[15px] overflow-hidden">
-                    <video class=""  autoplay loop muted>
+                <div class="max-w-[500px] 2xl:max-w-[615px] w-full h-[480px] rounded-[12px] overflow-hidden">
+                    <video class="h-full object-cover"  autoplay loop muted>
                         <source src="@/assets/images/about/hero/vid.mp4"  type="video/mp4">
                     </video>
                 </div>

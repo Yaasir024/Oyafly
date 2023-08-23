@@ -59,7 +59,7 @@ const selectCurrency = (c) => {
                 </transition>
             </div>
         </section>
-        <nav class="px-[24px] py-[12px]  flex items-center justify-between bg-white rounded-[20px]">
+        <nav class="pl-[24px] pr-[12px] py-[12px]  flex items-center justify-between bg-white rounded-[20px]">
             <RouterLink to="/">
                 <img src="/logo.svg" alt="" class="">
             </RouterLink>
@@ -67,9 +67,6 @@ const selectCurrency = (c) => {
                 <ul class="hidden md:flex items-center mr-[20px]">
                     <li class="text-[16px] leading-[19px] mr-[20px]">
                         <RouterLink to="/about">About Us</RouterLink>
-                    </li>
-                    <li class="text-[16px] leading-[19px] mr-[20px]">
-                        <RouterLink to="/">Blog</RouterLink>
                     </li>
                     <li class="text-[16px] leading-[19px] mr-[20px]">
                         <RouterLink to="/contact-us">Contact Us</RouterLink>
@@ -81,7 +78,7 @@ const selectCurrency = (c) => {
                 <div class="hidden md:block">
                     <RouterLink to="/">
                         <button
-                            class="px-[12px] py-[10px] rounded-[40px] text-white text-[16px] leading-[19px] font-bold bg-of-blue">Create
+                            class="px-[20px] py-[10px] rounded-[40px] text-white text-[16px] leading-[19px] font-bold bg-of-blue">Create
                             an account</button>
                     </RouterLink>
                 </div>

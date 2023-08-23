@@ -48,7 +48,7 @@ const bookFlight = () => {
         <div class="px-4 sm:px-6">
             <Header />
             <Hero />
-            <section class="flex flex-col xl:flex-row mt-[44px] mb-[80px]">
+            <section class="flex flex-col xl:flex-row mt-[16px] mb-[80px]">
                 <div class="w-full 2xl:w-[350px] pl-[24px] pr-[28px] pt-[15px] 2xl:shrink-0 mb-[40px] xl:mb-0">
                     <h3 class="text-[20px] leading-[19px] font-semibold font-pp">Filter your results</h3>
                     <div class="flex flex-row xl:flex-col mt-[24px] xl:mt-0 flex-wrap">
