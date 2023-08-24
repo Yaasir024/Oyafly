@@ -421,7 +421,7 @@ const bookFlight = () => {
                                                 class="text-[16px] leading-[16px] line-through font-pp font-semibold">₦536,000</span>
                                         </div>
                                         <button @click="bookFlight"
-                                            class="rounded-xl p-2 bg-of-blue flex items-center justify-center w-full max-w-[240px] mx-auto h-[40px]">
+                                            class="rounded-xl p-2 bg-of-blue flex items-center justify-center w-full  mx-auto h-[40px]">
                                             <span class="text-[14px] leading-normal font-semibold text-white">Book
                                                 flight</span>
                                             <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"

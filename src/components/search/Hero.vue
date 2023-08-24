@@ -79,7 +79,7 @@ const reduceInfant = () => {
 
                             </button>
                             <transition name="menu">
-                                <div class="absolute top-[50px] left-0 w-full z-[5]" v-if="showFlightClassMenu">
+                                <div class="absolute bottom-[50px] left-0 w-full z-[5]" v-if="showFlightClassMenu">
                                     <ul class="bg-white border rounded-b-md">
                                         <li class="px-2 py-2 cursor-pointer hover:bg-of-blue hover:text-white capitalize text-base font-medium"
                                             v-for="fclass in flightClasses" :key="fclass" @click="selectClass(fclass)">
@@ -174,7 +174,7 @@ const reduceInfant = () => {
 .menu-enter-active,
 .menu-leave-active {
     transition: transform 0.3s ease;
-    transform-origin: top left;
+    transform-origin: bottom left;
 }
 
 .menu-enter-from,

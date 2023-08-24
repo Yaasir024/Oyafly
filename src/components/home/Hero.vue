@@ -38,7 +38,7 @@ const reduceInfant = () => {
 
 <template>
     <section class="mt-[10px] ">
-        <section class="relative pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px] overflow-hidden">
+        <section class="relative pl-[24px] pt-[40px] pb-[28px] bg-white rounded-[20px]">
             <div class="flex justify-between lg:overflow-x-hidden">
                 <div class="">
                     <h1
@@ -134,7 +134,7 @@ const reduceInfant = () => {
                     <img src="@/assets/images/home/hero/cloud-2.png" alt="" class="h-full  cloud-img ">
                 </div>
             </div>
-            <div class="hidden xl:flex absolute right-0 top-[86px] bottom-[86px] max-w-[600px]">
+            <div class="hidden xl:flex absolute right-0 top-[86px] bottom-[86px] max-w-[600px] overflow-hidden">
                 <div class="masker h-full relative">
                     <img src="@/assets/images/home/hero/cloud-1.png" alt="" class="h-full  cloud-img top-0 left-0 right-0 bottom-0">
                 </div>
