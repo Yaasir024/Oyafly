@@ -287,7 +287,7 @@ const bookFlight = () => {
                     <div class="mt-[16px]">
                         <div class="bg-white rounded-[20px] border border-of-gray p-4 mb-[12px]" v-for="n in 4" :key="n">
                             <div class="flex flex-col lg:flex-row">
-                                <div class="border-r-2 border-dashed border-of-main ">
+                                <div class="md:border-r-2 border-dashed border-of-main ">
                                     <div
                                         class="flex items-center justify-between pb-[14px] border-b-2 border-dashed border-of-main pr-4">
                                         <h4 class="text-[18px] leading-[19px] font-pp">Areo Airlines</h4>
@@ -296,14 +296,14 @@ const bookFlight = () => {
                                     </div>
                                     <div class="flex border-b-2 border-dashed border-of-main">
                                         <div
-                                            class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
+                                            class="py-[32px] px-[24px] md:border-r-2 border-dashed border-of-main hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Lagos</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
                                                 Muritala Muhammad Airport 2</h3>
                                         </div>
                                         <div
-                                            class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
+                                            class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center md:border-r-2 border-dashed border-of-main w-full">
                                             <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
                                             <div class="flex items-center justify-between">
                                                 <div class="">
@@ -342,14 +342,14 @@ const bookFlight = () => {
                                     </div>
                                     <div class="flex">
                                         <div
-                                            class="py-[32px] px-[24px] border-r-2 border-dashed border-of-main hidden lg:block">
+                                            class="py-[32px] px-[24px] md:border-r-2 border-dashed border-of-main hidden lg:block">
                                             <h3 class="text-[14px] leading-[17px]">Abuja</h3>
                                             <h3
                                                 class="text-[12px] leading-[14px] font-medium mt-[10px] max-w-[128px] truncate">
                                                 Dr Nnamdi Azikwe Airport</h3>
                                         </div>
                                         <div
-                                            class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center border-r-2 border-dashed border-of-main w-full">
+                                            class="pt-[12px] pb-[32px] px-[24px] flex flex-col items-center md:border-r-2 border-dashed border-of-main w-full">
                                             <h3 class="text-[12px] leading-[15px] font-medium">Direct</h3>
                                             <div class="flex items-center justify-between">
                                                 <div class="">
@@ -389,7 +389,7 @@ const bookFlight = () => {
                                 </div>
                                 <div class="flex flex-col justify-end min-w-[250px] w-full">
                                     <div
-                                        class="pt-[15px] lg:pt-0  pb-[12px] pl-[16px] border-b-2 border-dashed border-of-main">
+                                        class="pt-[15px] lg:pt-0  pb-[12px] sm:pl-[16px] border-b-2 border-dashed border-of-main">
                                         <div class="flex items-center">
                                             <svg class="mr-[4px]" width="14" height="15" viewBox="0 0 14 15" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
@@ -414,7 +414,7 @@ const bookFlight = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="px-[16px] pt-[23px]">
+                                    <div class="sm:px-[16px] pt-[23px]">
                                         <div class="flex items-end mb-[22px]">
                                             <span class="text-[20px] leading-[21px] font-pp mr-2">₦200,000</span>
                                             <span
