@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import MobileNav from '@/components/navigation/MobileNav.vue';
+import MobileNav from '@/components/navigation/Mobile.vue';
 
 import { useClickOutside } from "@/composables/useClickOutside";
 
@@ -12,6 +12,16 @@ useClickOutside(mobileNav, () => {
     showMobileNav.value = false;
 });
 
+const toggleMobileNav = () => {
+    if (showMobileNav.value) {
+        document.body.classList.remove('modal-open');
+        showMobileNav.value = false
+    }
+    else if (!showMobileNav.value) {
+        document.body.classList.add('modal-open');
+        showMobileNav.value = true
+    }
+}
 
 const currencyNav = ref(null)
 const showCurrencyNav = ref(false)
@@ -83,7 +93,7 @@ const selectCurrency = (c) => {
                     </RouterLink>
                 </div>
                 <div class="block md:hidden" ref="mobileNav">
-                    <svg @click="showMobileNav = !showMobileNav" class="cursor-pointer" height="24" width="24"
+                    <svg @click="toggleMobileNav()" class="cursor-pointer" height="24" width="24"
                         clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -91,7 +101,7 @@ const selectCurrency = (c) => {
                             fill-rule="nonzero" />
                     </svg>
                     <transition name="nav">
-                        <MobileNav v-if="showMobileNav" @close="showMobileNav = false" />
+                        <MobileNav v-if="showMobileNav" @close="toggleMobileNav()" />
                     </transition>
                 </div>
             </div>
