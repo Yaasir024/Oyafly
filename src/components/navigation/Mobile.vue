@@ -38,7 +38,7 @@ calc(100vh-100px) top-[60px]-->
                     <RouterLink to="/" class="link text-[24px] leading-[28px] tracking-[-0.24px] font-pp font-semibold" @click="closeOnRoute">Sign in</RouterLink>
                 </li>
                 <li class="mt-[12px]">
-                    <RouterLink to="/">
+                    <RouterLink to="/" @click="closeOnRoute()">
                         <button class="py-[25px] px-2 w-full text-white text-[24px] leading-[28px] tracking-[-0.24px] bg-of-blue font-semibold font-pp rounded-[88px]">Create an account</button>
                     </RouterLink>
                 </li>
