@@ -1,6 +1,6 @@
 <template>
     <footer class="mt-2 bg-[#D7E6FE] rounded-[20px]">
-        <div class="px-4 sm:px-6">
+        <div class="px-[12px] xs:px-4 sm:px-6">
             <div class="pt-[32px] px-[24px] flex justify-between flex-col lg:flex-row">
                 <div class="">
                     <img src="/logo-icon.svg" alt="" class="">

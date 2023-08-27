@@ -99,7 +99,7 @@ const toggleAccordion = (id) => {
                         </form>
                     </div>
                 </div>
-                <div class="flex-full lg:flex-50% lg:pl-8 ">
+                <div class="flex-full lg:flex-50% lg:pl-8 mt-12 lg:mt-0">
                     <div class="w-full pb-[12px] border-b">
                         <h1 class="text-[24px] leading-[24px] tracking-[-0.48px] font-semibold">General Questions</h1>
                     </div>

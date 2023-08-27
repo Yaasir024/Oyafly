@@ -60,7 +60,7 @@ calc(100vh-100px) top-[60px]-->
                             class="ml-2 px-[8px] py-[5px] bg-of-dark rounded-lg text-[14px] text-white leading-[25px] font-semibold">Subscribe</button>
                     </form>
                 </div>
-                <p class="mt-[16px] text-base font-semibold font-inter text-[#FF3B4A]">
+                <p v-if="false" class="mt-[16px] text-base font-semibold font-inter text-[#FF3B4A]">
                     Please include an @ in
                     the email address</p>
             </div>
